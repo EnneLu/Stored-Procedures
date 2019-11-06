@@ -68,9 +68,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebFormAddCliente.aspx" />
+    <Content Include="WebFormCRUDCliente.aspx" />
+    <Content Include="WebFormCRUDVeiculo.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormAddCliente.aspx.cs">
+      <DependentUpon>WebFormAddCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddCliente.aspx.designer.cs">
+      <DependentUpon>WebFormAddCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDCliente.aspx.cs">
+      <DependentUpon>WebFormCRUDCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDCliente.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDVeiculo.aspx.cs">
+      <DependentUpon>WebFormCRUDVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDVeiculo.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDVeiculo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
