@@ -15,7 +15,7 @@ namespace Stored_Procedures.Modelo
 
         public Cliente()
         {
-            this.id = "";
+            this.id = 0;
             this.nome = "";
             this.data_nascimento = new DateTime();
             this.cpf = "";

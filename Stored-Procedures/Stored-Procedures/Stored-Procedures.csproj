@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\style.css" />
+    <Content Include="Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddCliente.aspx" />
     <Content Include="WebFormCRUDCliente.aspx" />
@@ -74,6 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DAOVeiculo.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Veiculo.cs" />
     <Compile Include="DAL\DAOCliente.cs" />
     <Compile Include="Modelo\Cliente.cs" />
