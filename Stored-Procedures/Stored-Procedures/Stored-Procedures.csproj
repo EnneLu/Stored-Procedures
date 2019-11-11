@@ -71,6 +71,7 @@
     <Content Include="Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddCliente.aspx" />
+    <Content Include="WebFormAddVeiculo.aspx" />
     <Content Include="WebFormCRUDCliente.aspx" />
     <Content Include="WebFormCRUDVeiculo.aspx" />
   </ItemGroup>
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="WebFormAddCliente.aspx.designer.cs">
       <DependentUpon>WebFormAddCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAddVeiculo.aspx.cs">
+      <DependentUpon>WebFormAddVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddVeiculo.aspx.designer.cs">
+      <DependentUpon>WebFormAddVeiculo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDCliente.aspx.cs">
       <DependentUpon>WebFormCRUDCliente.aspx</DependentUpon>

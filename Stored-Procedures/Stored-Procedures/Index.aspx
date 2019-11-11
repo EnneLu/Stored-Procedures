@@ -26,7 +26,7 @@
                         <div class="face face2">
                             <div class="conteudo">
                                 <p>Cadastro, visualização, exclusão e edição de clientes</p>
-                                <a href="#" class="btn">Gerenciar</a>
+                                <a href="WebFormCRUDCliente.aspx" class="btn">Gerenciar</a>
                             </div>
                         </div>
                     </div>
