@@ -19,7 +19,7 @@
             <asp:Label ID="cpf" runat="server" Text="CPF"></asp:Label>
             <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
             <br/>
-            <asp:Button ID="salvar" runat="server" Text="Salvar"   />
+            <asp:Button ID="salvar" runat="server" Text="Salvar" OnClick="salvar_Click"   />
             <asp:Button ID="cancelar" runat="server" Text="Cancelar" PostBackUrl="~/WebFormCRUDCliente.aspx"/>
         </div>
     </form>
