@@ -31,6 +31,10 @@ danger zone
 
  DROP procedure Cliente_select_all
 
+ DROP procedure Cliente_delete
+
+ DROP procedure Cliente_update
+
  drop function validarCPF
 
 */
@@ -112,6 +116,12 @@ begin
 	set @verificarCpf  = (select dbo.validarCpf(@cpf))
 
 
+	if((@id = '') or (@id is null))
+		begin
+			select * from Cliente
+			return
+		end
+
 	--Verificação de nome
 	if(@nome is null) or ((REPLACE(@nome,'','') = ''))
 	begin
@@ -145,7 +155,7 @@ begin
 		raiserror('Cpf incorreto',16,1)
 		return
 	end
-	insert into Cliente(nome,data_nascimento,cpf) values (@nome,@data_nascimento,@cpf)
+	update Cliente set nome = @nome,data_nascimento = @data_nascimento,cpf = @cpf where id = @id
 	--fim da verificação de cpf
 
 end
@@ -155,9 +165,7 @@ end
 
 Funciona
 
-	exec  Cliente_insert 'Diogo','28/02/2002','10547286406'
-	exec  Cliente_insert 'Raul Severino Anderson Gomes','19/07/1941','93907929594'
-	exec  Cliente_insert 'Luzia Sebastiana Mariana Teixeira','10/12/1965','00699370108'
+	exec  Cliente_update '1','Diogo santos','28/02/2001','10547286406'
 
 
 
