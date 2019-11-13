@@ -16,7 +16,7 @@
             <asp:Label ID="datanascimento" runat="server" Text="Data Nascimento"></asp:Label>
             <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox>
             <br/>
-            <asp:Label ID="cpf" runat="server" Text="Cpf"></asp:Label>
+            <asp:Label ID="cpf" runat="server" Text="CPF"></asp:Label>
             <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
             <br/>
             <asp:Button ID="salvar" runat="server" Text="Salvar"   />
