@@ -67,7 +67,7 @@
         transform: translateY(0vh);
     }
     .cardContainer .mycard:hover .face.face1 {
-        background-color:#ff0057;
+        background-color: #f0506e;
     }
 
 .bg{
@@ -77,11 +77,11 @@
 .btn {
     text-decoration: none;
     padding: 5px 10px 5px 10px;
-    border: solid 1px #ff0057;
+    border: solid 1px #f0506e;
     background-color: rgba(198, 26, 16,0);
     color: #ff0057;
 }
     .btn:hover {
-        background-color: #ff0057;
+        background-color: #f0506e;
         color: white;
     }

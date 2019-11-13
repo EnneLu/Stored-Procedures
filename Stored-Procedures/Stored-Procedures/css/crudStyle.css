@@ -35,12 +35,50 @@
 }
 .btn {
     background: linear-gradient(90deg,#333 0%, #333 50%, #f0506e 50%, #f0506e 100%);
-    border: 1px solid white;
-    background-size: 200% 200%;
-    transition: ease 0.5s;
+    border: 1px solid #999;
+    background-size: 400% 400%;
+    transition: linear 0.5s;
 }
     .btn:hover {
         animation: bganimate 1s linear;
         background-position: 100% 100%;
         border: 1px solid #f0506e;
+        color:white;
     }
+
+.uk-table{
+    background-color:#222;
+}
+.uk-table tbody tr:hover{
+    background-color: #333;
+    transition: 1s;
+}
+.pulse {
+    margin-right:10px;
+    background: radial-gradient(circle,#333 0%, #333 1%, #f0506e 1%, #f0506e 100%);
+    border-radius:1000px;
+}
+.pulse:hover{
+    color:white;
+    background: radial-gradient(circle,#333 0%, #333 1%, #f0506e 1%, #f0506e 100%);
+}
+    .pulse:hover {
+        animation: pulse-black 2s infinite;
+    }
+
+@keyframes pulse-black {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}

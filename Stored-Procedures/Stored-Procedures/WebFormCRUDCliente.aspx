@@ -24,14 +24,15 @@
         <div class="tableArea">
                 <div class="red">
                         <div class="title">
-                            <div class="uk-text-large text-white">CLIENTES</div>
+                            <div class=""><a href="index.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
+                            <div class="uk-text-large text-white ">CLIENTES</div>
                         </div>
                         <div class=""><a class="uk-button uk-button-default text-white btn">ADICIONAR</a></div>
                 </div>
 
 
 
-            <table class="uk-table uk-table-hover">
+            <table class="uk-table">
                 <caption></caption>
                 <thead>
                     <tr>
@@ -51,15 +52,15 @@
                         <td>Table Data</td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
                         <td>15549616405</td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">Button</button></td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">Button</button></td>
+                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="pencil"></i></a></td>
+                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
                     </tr>
                     <tr>
                         <td>Table Data</td>
                         <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
                         <td>15549616405</td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">Button</button></td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">Button</button></td>
+                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="pencil"></i></a></td>
+                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
                     </tr>
                 </tbody>
             </table>
