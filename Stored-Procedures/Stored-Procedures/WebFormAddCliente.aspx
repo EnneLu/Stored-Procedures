@@ -10,6 +10,17 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="nome" runat="server" Text="Nome"></asp:Label>
+            <asp:TextBox ID="nometext" runat="server"></asp:TextBox>
+            <br/>
+            <asp:Label ID="datanascimento" runat="server" Text="Data Nascimento"></asp:Label>
+            <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox>
+            <br/>
+            <asp:Label ID="cpf" runat="server" Text="Cpf"></asp:Label>
+            <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
+            <br/>
+            <asp:Button ID="salvar" runat="server" Text="Salvar"   />
+            <asp:Button ID="cancelar" runat="server" Text="Cancelar" PostBackUrl="~/WebFormCRUDCliente.aspx"/>
         </div>
     </form>
 </body>
