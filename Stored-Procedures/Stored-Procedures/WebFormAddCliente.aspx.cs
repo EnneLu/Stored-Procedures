@@ -13,5 +13,25 @@ namespace Stored_Procedures
         {
 
         }
+
+        protected void salvar_Click(object sender, EventArgs e)
+        {
+            Modelo.Cliente aCliente;
+            DAL.DAOCliente aDAOCliente;
+
+            // Instancia um Objeto de Livro com as informações fornecidas
+            aCliente = new Modelo.Cliente(
+                nometext.Text, Convert.ToDateTime(datanascimentotext.Text), cpftext.Text);
+
+            // Instancia objeto da camada de negocio
+            aDAOCliente = new DAL.DAOCliente();
+
+            // Chama metodo de insert passando o objeto preenchido
+            aDAOCliente.Insert(aCliente);
+
+            // Chama Página de Titulos
+            Response.Redirect("~\\WebFormCRUDCliente");
+
+        }
     }
 }

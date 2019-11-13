@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +10,7 @@ namespace Stored_Procedures.DAL
 {
     public class DAOCliente
     {
-        /*
+    
          string connectionString = "";
 
          public DAOCliente()
@@ -39,7 +42,7 @@ namespace Stored_Procedures.DAL
                  while (dr.Read()) // Le o proximo registro
                  {
                      // Cria objeto com dados lidos do banco de dados
-                     aCliente = new Modelo.Cliente(dr["id"].ToString(), dr["nome"].ToString(), Convert.ToDateTime(dr["data_nascimento"].ToString()), dr["cpf"].ToString());
+                     aCliente = new Modelo.Cliente( dr["nome"].ToString(), Convert.ToDateTime(dr["data_nascimento"].ToString()), dr["cpf"].ToString());
                      aListCliente.Add(aCliente);
                  }
              }
@@ -48,7 +51,7 @@ namespace Stored_Procedures.DAL
              // Fecha Conexão
              conn.Close();
 
-             return aListLaboratorios;
+             return aListCliente;
          }
 
          [DataObjectMethod(DataObjectMethodType.Insert)]
@@ -102,6 +105,6 @@ namespace Stored_Procedures.DAL
              SqlCommand cmd = new SqlCommand("Delete From Cliente Where id = @id", conn);
              cmd.Parameters.AddWithValue("@id", obj.id);
              cmd.ExecuteNonQuery();
-         }*/
+         }
     }
 }
