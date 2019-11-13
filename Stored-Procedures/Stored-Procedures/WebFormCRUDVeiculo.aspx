@@ -5,11 +5,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="css/crudStyle.css" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+
+    <div class="corpo">
+
+        <div class="tableArea">
+                <div class="red">
+                        <div class="title">
+                            <div class="uk-text-large text-white">VEICULOS</div>
+                        </div>
+                        <div class=""><a class="uk-button uk-button-default text-white btn">ADICIONAR</a></div>
+                </div>
+
+
+
+            <table class="uk-table uk-table-hover">
+                <caption></caption>
+                <thead>
+                    <tr>
+                        <th>FABRICANTE</th>
+                        <th>MODELO</th>
+                        <th>ANO DE FABRICAÇÃO</th>
+                        <th>PLACA</th>
+                        <th>ESTADO</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                        <td>15549616405</td>
+                        <td>15549616405</td>
+                        <td>15549616405</td>
+                        <td><button class="uk-button  uk-button-danger btn" type="button">EDITAR</button></td>
+                        <td><button class="uk-button  uk-button-danger btn" type="button">EXCLUIR</button></td>
+                    </tr>
+                    <tr>
+                        <td>Table Data</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                        <td>15549616405</td>
+                        <td>15549616405</td>
+                        <td>15549616405</td>
+                        <td><button class="uk-button  uk-button-danger btn" type="button">EDITAR</button></td>
+                        <td><button class="uk-button  uk-button-danger btn" type="button">EXCLUIR</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+            <!--
             <asp:Repeater runat="server" ID="crudVeiculo">
                 <ItemTemplate>
                     <div>teste</div>
@@ -19,6 +83,7 @@
             <asp:ObjectDataSource runat="server">
                 
             </asp:ObjectDataSource>
+            -->
         </div>
     </form>
 </body>

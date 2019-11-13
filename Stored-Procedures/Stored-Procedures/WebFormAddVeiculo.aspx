@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
 
-                        this.id = 0;
+            this.id = 0;
             this.fabricante = "";
             this.modelo = "";
             this.ano_fabricante = 0;

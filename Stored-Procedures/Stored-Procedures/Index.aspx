@@ -18,7 +18,7 @@
                 <div class="cardContainer">
                     <div class="mycard">
                         <div class="face face1">
-                            <a href="#" class="conteudo">
+                            <a href="WebFormCRUDCliente.aspx" class="conteudo">
                                 <i class="material-icons bg">person_outline</i>
                                 <h3>Cliente</h3>
                             </a>
@@ -37,7 +37,7 @@
                 <div class="cardContainer">
                     <div class="mycard">
                         <div class="face face1">
-                            <a href="#" class="conteudo">
+                            <a href="WebFormCRUDVeiculo.aspx" class="conteudo">
                                 <i class="material-icons bg">airport_shuttle</i>
                                 <h3>Veiculo</h3>
                             </a>
@@ -45,7 +45,7 @@
                         <div class="face face2">
                             <div class="conteudo">
                                 <p>Cadastro, visualização, exclusão e edição de veículos</p>
-                                <a href="#" class="btn">Gerenciar</a>
+                                <a href="WebFormCRUDVeiculo.aspx" class="btn">Gerenciar</a>
                             </div>
                         </div>
                     </div>
