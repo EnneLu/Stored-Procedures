@@ -31,10 +31,14 @@ namespace Stored_Procedures.DAL
              conn.Open();
              // Cria comando SQL
              SqlCommand cmd = conn.CreateCommand();
-             // define SQL do comando
-             cmd.CommandText = "SELECT * FROM Cliente";
-             // Executa comando, gerando objeto DbDataReader
-             SqlDataReader dr = cmd.ExecuteReader();
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // define SQL do comando
+            cmd.CommandText = "Cliente_select_all";
+            // Executa comando, gerando objeto DbDataReader
+            cmd.Parameters.AddWithValue("@id", 0);
+
+            SqlDataReader dr = cmd.ExecuteReader();
              // Le titulo do livro do resultado e apresenta no segundo rótulo
              if (dr.HasRows)
              {
@@ -57,14 +61,17 @@ namespace Stored_Procedures.DAL
          [DataObjectMethod(DataObjectMethodType.Insert)]
          public void Insert(Modelo.Cliente obj)
          {
-             // Cria Conexão com banco de dados
-             SqlConnection conn = new SqlConnection(connectionString);
-             // Abre conexão com o banco de dados
-             conn.Open();
-             // Cria comando SQL
-             SqlCommand com = conn.CreateCommand();
-             // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("INSERT INTO Cliente(nome,data_nascimento,cpf) VALUES(@nome, @data_nascimento, @cpf)", conn);
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // Define comando de exclusão
+            cmd.CommandText = "Cliente_insert";
+
              cmd.Parameters.AddWithValue("@nome", obj.nome);
              cmd.Parameters.AddWithValue("@data_nascimento", obj.data_nascimento);
              cmd.Parameters.AddWithValue("@cpf", obj.cpf);

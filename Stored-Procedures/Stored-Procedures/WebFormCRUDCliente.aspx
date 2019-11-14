@@ -32,7 +32,7 @@
 
 
 
-            <table class="uk-table">
+            <table class="uk-table  text-white">
                 <caption></caption>
                 <thead>
                     <tr>
@@ -48,20 +48,20 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Table Data</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                        <td>15549616405</td>
-                        <td><a class="uk-button  uk-button-danger btn"  type="button" ><i uk-icon="pencil"></i></a></td>
-                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>Table Data</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                        <td>15549616405</td>
-                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="pencil"></i></a></td>
-                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
-                    </tr>
+                    <!-- repeater para visualizar clientes-->
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceCliente">
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# DataBinder.Eval(Container.DataItem, "nome")%></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "cpf")%></td>
+                                <td><a class="uk-button  uk-button-danger btn"  type="button" ><i uk-icon="pencil"></i></a></td>
+                                <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSourceCliente" SelectMethod="SelectAll" TypeName="Stored_Procedures.DAL.DAOCliente"></asp:ObjectDataSource>
+                    <!--fim do repeater para visualizar clientes-->
                 </tbody>
             </table>
         </div>

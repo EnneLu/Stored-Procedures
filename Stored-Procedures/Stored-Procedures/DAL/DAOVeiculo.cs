@@ -89,7 +89,7 @@ namespace Stored_Procedures.DAL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("INSERT INTO Veiculo(fabricante,modelo,ano_fabricante,placa,uf) VALUES(@fabricante,@modelo,@ano_fabricante,@placa, @uf)", conn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);

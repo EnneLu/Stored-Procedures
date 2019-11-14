@@ -30,7 +30,7 @@ namespace Stored_Procedures
             aDAOCliente.Insert(aCliente);
 
             // Chama Página de Titulos
-            Response.Redirect("~\\WebFormCRUDCliente");
+            Response.Redirect("~\\WebFormCRUDCliente.aspx");
 
         }
     }
