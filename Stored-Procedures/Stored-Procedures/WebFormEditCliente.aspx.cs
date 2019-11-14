@@ -13,5 +13,14 @@ namespace Stored_Procedures
         {
 
         }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            DAL.DAOCliente aDAOCliente  = new DAL.DAOCliente();
+            Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
+            aCliente.nome = nometext.Text;
+            aCliente.data_nascimento = Convert.ToDateTime(datanascimentotext.Text);
+            aCliente.cpf = cpftext.Text;
+            aDAOCliente.Update(aCliente);
+        }
     }
 }

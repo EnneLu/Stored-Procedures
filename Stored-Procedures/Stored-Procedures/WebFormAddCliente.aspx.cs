@@ -20,8 +20,7 @@ namespace Stored_Procedures
             DAL.DAOCliente aDAOCliente;
 
             // Instancia um Objeto de Livro com as informações fornecidas
-            aCliente = new Modelo.Cliente(1,
-                nometext.Text, Convert.ToDateTime(datanascimentotext.Text), cpftext.Text);
+            aCliente = new Modelo.Cliente(1,nometext.Text, Convert.ToDateTime(datanascimentotext.Text), cpftext.Text);
 
             // Instancia objeto da camada de negocio
             aDAOCliente = new DAL.DAOCliente();

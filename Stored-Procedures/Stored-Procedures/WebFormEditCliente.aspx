@@ -36,7 +36,7 @@
                         <td><asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton></td>
                         <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
                     </tr>
-                </div>
+
             </ItemTemplate>  
         </asp:Repeater>
         <asp:ObjectDataSource runat="server" ID="ObjectDataSourceEdit" DataObjectTypeName="Stored_Procedures.Modelo.Cliente" SelectMethod="Select" TypeName="Stored_Procedures.DAL.DAOCliente" UpdateMethod="Update">
@@ -45,6 +45,19 @@
             </SelectParameters>
         </asp:ObjectDataSource>
         <!--fim do repeater para edicao-->
+
+
+        <asp:Label ID="nome" runat="server" Text="Nome"></asp:Label>
+        <asp:TextBox ID="nometext" runat="server"></asp:TextBox>
+        <br/>
+        <asp:Label ID="datanascimento" runat="server" Text="Data Nascimento"></asp:Label>
+        <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox>
+        <br/>
+        <asp:Label ID="cpf" runat="server" Text="CPF"></asp:Label>
+        <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
+        <br/>
+        <asp:LinkButton runat="server" ID="editar" OnClick="Button2_Click">editar</asp:LinkButton>
+         </div>
     </div>
 </div>
 </form>
