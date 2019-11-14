@@ -33,7 +33,7 @@ namespace Stored_Procedures.DAL
             {
                 while (dr.Read())
                 {
-                    aUsuario = new Modelo.Veiculo(dr["id"].ToString(),
+                    aUsuario = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()),
                                             dr["fabricante"].ToString(), 
                                             dr["modelo"].ToString(),
                                             Convert.ToInt32(dr["ano_fabricante"].ToString()),
@@ -50,24 +50,31 @@ namespace Stored_Procedures.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Veiculo> SelectAll()
         {
+            // Variavel para armazenar um cliente
             Modelo.Veiculo aVeiculo;
+            // Cria Lista Vazia
             List<Modelo.Veiculo> aListVeiculo = new List<Modelo.Veiculo>();
+            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
             conn.Open();
+            // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Veiculo";
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // define SQL do comando
+            cmd.CommandText = "Veiculo_select_all";
+            // Executa comando, gerando objeto DbDataReader
+            cmd.Parameters.AddWithValue("@id", 0);
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
 
-                while (dr.Read()) 
+                while (dr.Read()) // Le o proximo registro
                 {
-                    aVeiculo = new Modelo.Veiculo(dr["id"].ToString(),
-                                            dr["fabricante"].ToString(),
-                                            dr["modelo"].ToString(),
-                                            Convert.ToInt32(dr["ano_fabricante"].ToString()),
-                                            dr["placa"].ToString(),
-                                            dr["uf"].ToString());
+                    // Cria objeto com dados lidos do banco de dados
+                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()), dr["fabricante"].ToString(), dr["modelo"].ToString(),Convert.ToInt32(dr["ano_fabricante"].ToString()),dr["placa"].ToString(),dr["uf"].ToString());
                     aListVeiculo.Add(aVeiculo);
                 }
             }
@@ -86,10 +93,12 @@ namespace Stored_Procedures.DAL
             // Abre conexão com o banco de dados
             conn.Open();
             // Cria comando SQL
-            SqlCommand com = conn.CreateCommand();
-            // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Veiculo(fabricante,modelo,ano_fabricante,placa,uf) VALUES(@fabricante,@modelo,@ano_fabricante,@placa, @uf)", conn);
+            SqlCommand cmd = conn.CreateCommand();
+            // define uso do stored procedure
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // Define comando de insert
+            cmd.CommandText = "Veiculo_insert";
+
             cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);

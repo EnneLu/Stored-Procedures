@@ -46,14 +46,14 @@ danger zone
 
 
 CREATE PROCEDURE Veiculo_insert 
-	@id	INT,
 	@fabricante	VARCHAR(60),
 	@modelo	VARCHAR(60),
-	@ano_fabricacao INT,
+	@ano_fabricante INT,
 	@placa CHAR(8),
 	@uf CHAR(2)
 as
 begin
+
 
 	--Verificação de fabricante
 		if(@fabricante is null) or ((REPLACE(@fabricante,'','') = ''))
@@ -72,30 +72,23 @@ begin
 		end
 	--Fim da verificação de modelo
 
-	--Verificação de fabricante
-		if(@modelo is null) or ((REPLACE(@modelo,'','') = ''))
+	--Verificação de ano de fabricação
+		if(@ano_fabricante = '') or ((REPLACE(@ano_fabricante,'','') = ''))
 		begin
-			raiserror('O nome do modelo não pode ser vazio',16,1)
+			raiserror('O ano de fabricação não pode ser vazio',16,1)
 			return
 		end
-	--Fim da verificação de fabricante
+	--Fim da verificação de ano de fabricação
 
 	--Verificação de id
-		if((@id = '') or (@id is null))
+		if(@placa is null) or ((REPLACE(@placa,'','') = ''))
 		begin
-			select * from Cliente
+			raiserror('A placa não pode ser vazia',16,1)
 			return
 		end
 	--Fim da verificação de id
 
-	--Verificação de id
-		if((@id = '') or (@id is null))
-		begin
-			select * from Cliente
-			return
-		end
-	--Fim da verificação de id
-
+	insert into Veiculo(fabricante,modelo,ano_fabricante,placa,uf) values (@fabricante,@modelo,@ano_fabricante,@placa,@uf)
 end
 
 /*teste de stored_procedure
@@ -103,14 +96,23 @@ end
 
 Funciona
 
-	exec  Cliente_insert 'Diogo','28/02/2002','10547286406'
-	exec  Cliente_insert 'Raul Severino Anderson Gomes','19/07/1941','93907929594'
-	exec  Cliente_insert 'Luzia Sebastiana Mariana Teixeira','10/12/1965','00699370108'
+	exec  Veiculo_insert 'Gurgel','BR-800','1988','MZV-6877','RN'
+	exec  Veiculo_insert 'Mitsubishi','Space Wagon GLXi 2.4 ( Nova S','1999','AJX-2006','AC'
+	exec  Veiculo_insert 'Porsche','911 Carrera Cabriolet 3.4/ 3.6 Mec','1995','JAI-7695','MT'
+	exec  Veiculo_insert 'Hyundai','ix35 2.0 Launching Edition 16V Flex Aut.','2016','HZY-6421','PI'
+	exec  Veiculo_insert 'Subaru','Impreza WRX 2.5 16V TB 4x4 5p','2007','MZK-4402','MG'
+	exec  Veiculo_insert 'Mitsubishi','Colt GTi Mec','1995','GLT-8528','PB'
+	exec  Veiculo_insert 'LIFAN','530 TALENT 1.5 16V 103cv 4p','2015','MNW-4744','RN'
+	exec  Veiculo_insert 'Ford','KA GL 1.0i Zetec Rocam','2000','MOB-4370','PE'
+	exec  Veiculo_insert 'Dodge','Dakota Sport 3.9 V6 CD Mec.','2001','MOD-5244','RN'
+	exec  Veiculo_insert 'Cadillac','Seville 4.6','1991','MNH-1733','RN'
+
 
 
 
 
 Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
+
 
 
 */
@@ -209,17 +211,17 @@ Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
 
 --Visualizar clientes  DROP procedure Cliente_select_all--
 
-CREATE PROCEDURE Cliente_select_all
+CREATE PROCEDURE |Veiculo_select_all
 	@id int
 as
 begin
 	if((@id = '') or (@id is null))
 		begin
-			select * from Cliente
+			select * from Veiculo
 			return
 		end
 
-	select * from Cliente where id = @id
+	select * from Veiculo where id = @id
 
 end
 
@@ -228,7 +230,7 @@ end
 
 Funciona  
 
-	exec  Cliente_select_all  ''
+	exec  Veiculo_select_all  ''
 
 
 Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'

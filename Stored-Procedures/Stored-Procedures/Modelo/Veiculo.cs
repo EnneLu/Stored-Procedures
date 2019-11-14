@@ -24,14 +24,14 @@ namespace Stored_Procedures.Modelo
             this.uf = "";
         }
 
-        public Veiculo(string id, string fabricante, string modelo, int ano_fabricante, string placa, string uf)
+        public Veiculo(int id, string fabricante, string modelo, int ano_fabricante, string placa, string uf)
         {
-            this.id = 0;
-            this.fabricante = "";
-            this.modelo = "";
-            this.ano_fabricante = 0;
-            this.placa = "";
-            this.uf = "";
+            this.id = id;
+            this.fabricante = fabricante;
+            this.modelo = modelo;
+            this.ano_fabricante = ano_fabricante;
+            this.placa = placa;
+            this.uf = uf;
         }
     }
 }

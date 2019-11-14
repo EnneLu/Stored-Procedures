@@ -16,6 +16,20 @@ namespace Stored_Procedures
 
         protected void salvar_Click(object sender, EventArgs e)
         {
+            Modelo.Veiculo aVeiculo;
+            DAL.DAOVeiculo aDAOVeiculo;
+
+            // Instancia um Objeto de Livro com as informações fornecidas
+            aVeiculo = new Modelo.Veiculo(1, fabricante.Text, modelo.Text, Convert.ToInt32(ano_fabricante.Text), placa.Text, uf.Text);
+
+            // Instancia objeto da camada de negocio
+            aDAOVeiculo = new DAL.DAOVeiculo();
+
+            // Chama metodo de insert passando o objeto preenchido
+            aDAOVeiculo.Insert(aVeiculo);
+
+            // Chama Página de Titulos
+            Response.Redirect("~\\WebFormCRUDVeiculo.aspx");
 
         }
     }

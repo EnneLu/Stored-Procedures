@@ -23,7 +23,7 @@
         <div class="red">
             <div class="title">
                 <div class=""><a href="WebFormCRUDCliente.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
-                <div class="uk-text-large text-white ">ADICIONAR CLIENTES</div>
+                <div class="uk-text-large text-white ">ADICIONAR CLIENTE</div>
             </div>
         </div>
 

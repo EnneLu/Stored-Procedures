@@ -22,9 +22,9 @@ namespace Stored_Procedures.Modelo
         }
 
 
-        public Cliente( string nome, DateTime data_nascimento, string cpf)
+        public Cliente(int id, string nome, DateTime data_nascimento, string cpf)
         {
-           
+            this.id = id;
             this.nome = nome;
             this.data_nascimento = data_nascimento;
             this.cpf = cpf;

@@ -10,7 +10,7 @@
 namespace Stored_Procedures {
     
     
-    public partial class WebFormCRUDVeiculo {
+    public partial class WebFormEditCliente {
         
         /// <summary>
         /// Controle form1.
@@ -31,21 +31,12 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
-        /// Controle ObjectDataSourceVeiculo.
+        /// Controle ObjectDataSourceEdit.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceVeiculo;
-        
-        /// <summary>
-        /// Controle crudVeiculo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater crudVeiculo;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceEdit;
     }
 }

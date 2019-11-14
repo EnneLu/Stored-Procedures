@@ -50,24 +50,21 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Table Data</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                        <td>15549616405</td>
-                        <td>15549616405</td>
-                        <td>15549616405</td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">EDITAR</button></td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">EXCLUIR</button></td>
-                    </tr>
-                    <tr>
-                        <td>Table Data</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-                        <td>15549616405</td>
-                        <td>15549616405</td>
-                        <td>15549616405</td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">EDITAR</button></td>
-                        <td><button class="uk-button  uk-button-danger btn" type="button">EXCLUIR</button></td>
-                    </tr>
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceVeiculo">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "fabricante")%></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "modelo")%></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "placa")%></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "uf")%></td>
+
+                                    <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="pencil"></i></a></td>
+                                    <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:ObjectDataSource runat="server" ID="ObjectDataSourceVeiculo" SelectMethod="SelectAll" TypeName="Stored_Procedures.DAL.DAOVeiculo"></asp:ObjectDataSource>
                 </tbody>
             </table>
         </div>

@@ -49,13 +49,13 @@
                 </tfoot>
                 <tbody>
                     <!-- repeater para visualizar clientes-->
-                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceCliente">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceCliente" OnItemCommand="Repeater1_ItemCommand">
                         <ItemTemplate>
                             <tr>
                                 <td><%# DataBinder.Eval(Container.DataItem, "nome")%></td>
                                 <td><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></td>
-                                <td><%# DataBinder.Eval(Container.DataItem, "cpf")%></td>
-                                <td><a class="uk-button  uk-button-danger btn"  type="button" ><i uk-icon="pencil"></i></a></td>
+                                <td><%# DataBinder.Eval(Container.DataItem, "cpf")%></td>                               
+                                <td><asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton></td>
                                 <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
                             </tr>
                         </ItemTemplate>
