@@ -27,17 +27,38 @@
             </div>
         </div>
 
-        <asp:Label ID="nome" runat="server" Text="Nome"></asp:Label>
-        <asp:TextBox ID="nometext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:Label ID="datanascimento" runat="server" Text="Data Nascimento"></asp:Label>
-        <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:Label ID="cpf" runat="server" Text="CPF"></asp:Label>
-        <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:Button ID="salvar" runat="server" Text="Salvar" OnClick="salvar_Click"   />
-        <asp:Button ID="cancelar" runat="server" Text="Cancelar" PostBackUrl="~/WebFormCRUDCliente.aspx"/>
+        <div class="uk-margin">
+            <label class="uk-form-label text-white" for="form-stacked-text">preencha os campos abaixo</label>
+            <div class="uk-form-controls">
+                
+            </div>
+        </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <asp:TextBox CssClass="uk-input uk-form-danger" ID="nometext" placeholder="Nome" runat="server"></asp:TextBox>
+            </div>
+        </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: calendar"></span>
+                    <asp:TextBox ID="datanascimentotext" CssClass="uk-input uk-form-danger"  placeholder="Data de nascimento"  runat="server"></asp:TextBox>
+            </div>
+        </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:TextBox ID="cpftext" CssClass="uk-input uk-form-danger"  placeholder="CPF" runat="server"></asp:TextBox>
+            </div>
+        </div>  
+        <asp:LinkButton ID="btnsalvar" CssClass="uk-button  uk-button-danger btn" OnClick="salvar_Click" runat="server">Adicionar</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton1" CssClass="uk-button  btn" OnClick="salvar_Click" runat="server" PostBackUrl="~/WebFormCRUDCliente.aspx">Cancelar</asp:LinkButton>
     </div>
 </div>
 </div>

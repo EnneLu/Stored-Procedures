@@ -22,15 +22,6 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle nome.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nome;
-        
-        /// <summary>
         /// Controle nometext.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace Stored_Procedures {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nometext;
-        
-        /// <summary>
-        /// Controle datanascimento.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label datanascimento;
         
         /// <summary>
         /// Controle datanascimentotext.
@@ -58,15 +40,6 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.TextBox datanascimentotext;
         
         /// <summary>
-        /// Controle cpf.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cpf;
-        
-        /// <summary>
         /// Controle cpftext.
         /// </summary>
         /// <remarks>
@@ -76,21 +49,21 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.TextBox cpftext;
         
         /// <summary>
-        /// Controle salvar.
+        /// Controle btnsalvar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button salvar;
+        protected global::System.Web.UI.WebControls.LinkButton btnsalvar;
         
         /// <summary>
-        /// Controle cancelar.
+        /// Controle LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cancelar;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
     }
 }
