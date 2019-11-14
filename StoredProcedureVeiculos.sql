@@ -211,7 +211,7 @@ Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
 
 --Visualizar clientes  DROP procedure Cliente_select_all--
 
-CREATE PROCEDURE |Veiculo_select_all
+CREATE PROCEDURE Veiculo_select_all
 	@id int
 as
 begin
@@ -231,7 +231,6 @@ end
 Funciona  
 
 	exec  Veiculo_select_all  ''
-
 
 Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
 
