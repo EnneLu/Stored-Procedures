@@ -76,6 +76,7 @@
     <Content Include="WebFormCRUDCliente.aspx" />
     <Content Include="WebFormCRUDVeiculo.aspx" />
     <Content Include="WebFormEditCliente.aspx" />
+    <Content Include="WebFormViewCliente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DAOVeiculo.cs" />
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="WebFormEditCliente.aspx.designer.cs">
       <DependentUpon>WebFormEditCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormViewCliente.aspx.cs">
+      <DependentUpon>WebFormViewCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormViewCliente.aspx.designer.cs">
+      <DependentUpon>WebFormViewCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

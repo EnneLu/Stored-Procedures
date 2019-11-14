@@ -28,7 +28,7 @@ namespace Stored_Procedures
                 Session["idcliente"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//WebFormEditCliente.aspx");
+                Response.Redirect("~//WebFormViewCliente.aspx");
             }
         }
     }
