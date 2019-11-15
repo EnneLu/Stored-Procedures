@@ -21,6 +21,7 @@ namespace Stored_Procedures
             aCliente.data_nascimento = Convert.ToDateTime(datanascimentotext.Text);
             aCliente.cpf = cpftext.Text;
             aDAOCliente.Update(aCliente);
+            Response.Redirect("~//WebFormEditCliente.aspx");
         }
     }
 }

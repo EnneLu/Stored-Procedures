@@ -20,14 +20,19 @@
     <div class="corpo">
 
         <div class="tableArea">
+
+
+            <!--Repeater para mostrar dados do cliente-->
+            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater1_ItemCommand">
+                <ItemTemplate>
+
             <div class="red">
                 <div class="title">
                     <div class=""><a href="WebFormCRUDCliente.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
-                    <div class="uk-text-large text-white ">ADICIONAR VEICULO</div>
+                    <div class="uk-text-large text-white ">Nome:<%# DataBinder.Eval(Container.DataItem, "nome")%></div>
                 </div>
             </div>
-            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-                <ItemTemplate>
+
 
                 <div class="uk-card uk-card-default ">
                     <div class="uk-card-header">
@@ -43,7 +48,7 @@
                         <p>CPF: <%# DataBinder.Eval(Container.DataItem, "cpf")%></p>
                     </div>
                     <div class="uk-card-footer">
-                       <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton>
+                       <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR"  CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton>
                     </div>
                 </div>
 
@@ -54,6 +59,8 @@
                     <asp:SessionParameter SessionField="idcliente" Name="id" Type="Int32"></asp:SessionParameter>
                 </SelectParameters>
             </asp:ObjectDataSource>
+            <!--Fim do repeater para mostrar dados do cliente-->
+
         </div>
     </div>
 

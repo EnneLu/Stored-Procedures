@@ -12,12 +12,17 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
 <link rel="stylesheet" href="css/crudStyle.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="script/script.js"></script>
     <title></title>
 </head>
 <body>
 <form id="form1" runat="server">
 <div>
     <div class="corpo">
+
+
+
         <!--repeater para edicao-->
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceEdit">
             <ItemTemplate>
@@ -25,18 +30,26 @@
                     <div class="red">
                         <div class="title">
                             <div class=""><a href="WebFormCRUDCliente.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
-                            <div class="uk-text-large text-white "><%# DataBinder.Eval(Container.DataItem, "nome")%></div>
+                            <div class="uk-text-large text-white ">EDITAR CLIENTE</div>
                         </div>
                     </div>
 
-                     <tr>
-                        <td><%# DataBinder.Eval(Container.DataItem, "nome")%></td>
-                        <td><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></td>
-                        <td><%# DataBinder.Eval(Container.DataItem, "cpf")%></td>                               
-                        <td><asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton></td>
-                        <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
-                    </tr>
-
+                <div class="uk-card uk-card-default" id="hide">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom" id="nome"><%# DataBinder.Eval(Container.DataItem, "nome")%></h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p id="data"><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></p>
+                        <p id="cpf"><%# DataBinder.Eval(Container.DataItem, "cpf")%></p>
+                    </div>
+                    <div class="uk-card-footer">
+                    </div>
+                </div>
             </ItemTemplate>  
         </asp:Repeater>
         <asp:ObjectDataSource runat="server" ID="ObjectDataSourceEdit" DataObjectTypeName="Stored_Procedures.Modelo.Cliente" SelectMethod="Select" TypeName="Stored_Procedures.DAL.DAOCliente" UpdateMethod="Update">
@@ -47,17 +60,23 @@
         <!--fim do repeater para edicao-->
 
 
-        <asp:Label ID="nome" runat="server" Text="Nome"></asp:Label>
-        <asp:TextBox ID="nometext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:Label ID="datanascimento" runat="server" Text="Data Nascimento"></asp:Label>
-        <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:Label ID="cpf" runat="server" Text="CPF"></asp:Label>
-        <asp:TextBox ID="cpftext" runat="server"></asp:TextBox>
-        <br/>
-        <asp:LinkButton runat="server" ID="editar" OnClick="Button2_Click">editar</asp:LinkButton>
-         </div>
+        <div class="uk-card uk-card-default" id="show">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Nome:<asp:TextBox ID="nometext" runat="server"></asp:TextBox></h3>
+                        <p class="uk-text-meta uk-margin-remove-top"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <p>Data de nascimento: <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox></p>
+                <p>CPF: <asp:TextBox ID="cpftext" runat="server"></asp:TextBox></p>
+            </div>
+            <div class="uk-card-footer">
+                <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">editar</asp:LinkButton>
+            </div>
+        </div>            
     </div>
 </div>
 </form>

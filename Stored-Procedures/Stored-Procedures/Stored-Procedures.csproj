@@ -70,6 +70,7 @@
     <Content Include="css\crudStyle.css" />
     <Content Include="css\style.css" />
     <Content Include="Index.aspx" />
+    <Content Include="script\script.js" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddCliente.aspx" />
     <Content Include="WebFormAddVeiculo.aspx" />
