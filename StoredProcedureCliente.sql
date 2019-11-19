@@ -56,22 +56,44 @@ begin
 
 
 	--Verificação de nome
-	if(@nome is null) or ((REPLACE(@nome,'','') = ''))
-	begin
-		raiserror('O campo nome não pode ser vazio',16,1)
-		return
-	end
+		if(@nome is null) or ((REPLACE(@nome,'','') = ''))
+		begin
+			raiserror('O nome não pode ser vazio',16,1)
+			return
+		end
 	--Fim da verificação de nome
+
+
+	--Verificação de data
+		if(@data_nascimento is null) or ((REPLACE(@data_nascimento,'','') = ''))
+		begin
+			raiserror('O nome não pode ser vazio',16,1)
+			return
+		end
+
+		if(@data_nascimento not like '[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]')
+		begin
+			raiserror('Formato da data incorreto',16,1)
+			return
+		end  
+
+
+		if(ISDATE('2009-05-12 10:19:41.177') != 1)
+		begin
+			raiserror('Data incorreta',16,1)
+			return
+		end
+	--Fim da verificação de data
 
 
 
 	--Verificação de cpf
-	if(@verificarCpf = 0) or ((REPLACE(@cpf,'','') = ''))
-	begin
-		raiserror('Cpf incorreto',16,1)
-		return
-	end
-	insert into Cliente(nome,data_nascimento,cpf) values (@nome,@data_nascimento,@cpf)
+		if(@verificarCpf = 0) or ((REPLACE(@cpf,'','') = ''))
+		begin
+			raiserror('Cpf incorreto',16,1)
+			return
+		end
+		insert into Cliente(nome,data_nascimento,cpf) values (@nome,@data_nascimento,@cpf)
 	--fim da verificação de cpf
 
 end
