@@ -4,7 +4,7 @@
 CREATE PROCEDURE Cliente_update
 	@id	int,
 	@nome	VARCHAR(100),
-	@data_nascimento DATE,
+	@data_nascimento varchar(30),
 	@cpf VARCHAR(11)
 as
 begin
