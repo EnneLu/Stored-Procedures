@@ -151,9 +151,11 @@ namespace Stored_Procedures.DAL
 
              conn.Open();
 
-             SqlCommand com = conn.CreateCommand();
-
-             SqlCommand cmd = new SqlCommand("Delete From Cliente Where id = @id", conn);
+             SqlCommand cmd = conn.CreateCommand();
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // Define comando de update
+            cmd.CommandText = "Cliente_delete";
              cmd.Parameters.AddWithValue("@id", obj.id);
              cmd.ExecuteNonQuery();
          }

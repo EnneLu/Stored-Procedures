@@ -109,20 +109,42 @@ namespace Stored_Procedures.DAL
         }
 
         //EDITAR TODOS//
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.Veiculo obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Veiculo Set fabricante = @fabricante, modelo = @modelo, ano_fabricante = @ano_fabricante, placa = @placa, uf = @uf Where id = @id", conn);
+         [DataObjectMethod(DataObjectMethodType.Update)]
+         public void Update(Modelo.Veiculo obj)
+         {
+             SqlConnection conn = new SqlConnection(connectionString);
+
+             conn.Open();
+
+             SqlCommand cmd = conn.CreateCommand();
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // Define comando de update
+            cmd.CommandText = "Veiculo_update";
             cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);
             cmd.Parameters.AddWithValue("@placa", obj.placa);
             cmd.Parameters.AddWithValue("@uf", obj.uf);
 
-            cmd.ExecuteNonQuery();
-        }
+
+             cmd.ExecuteNonQuery();
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Delete)]
+         public void Delete(Modelo.Veiculo obj)
+         {
+             SqlConnection conn = new SqlConnection(connectionString);
+
+             conn.Open();
+
+             SqlCommand cmd = conn.CreateCommand();
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // Define comando de update
+            cmd.CommandText = "Veiculo_delete";
+             cmd.Parameters.AddWithValue("@id", obj.id);
+             cmd.ExecuteNonQuery();
+         }         
     }
 }
