@@ -36,7 +36,8 @@
 
         <div class="uk-margin">
             <div class="uk-inline">
-                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <span class="uk-form-icon" uk-icon="icon: user"></span>                               
+                <asp:Label ID="MsgErrodfabricante" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label> 
                 <asp:TextBox CssClass="uk-input uk-form-danger" ID="fabricante" placeholder="Fabricante" runat="server"></asp:TextBox>
             </div>
         </div>
@@ -44,8 +45,9 @@
 
         <div class="uk-margin">
             <div class="uk-inline">
-                <span class="uk-form-icon" uk-icon="icon: calendar"></span>
-                    <asp:TextBox ID="modelo" CssClass="uk-input uk-form-danger"  placeholder="Modelo"  runat="server"></asp:TextBox>
+                <span class="uk-form-icon" uk-icon="icon: calendar"></span>                
+                <asp:Label ID="MsgErromodelo" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label> 
+                 <asp:TextBox ID="modelo" CssClass="uk-input uk-form-danger"  placeholder="Modelo"  runat="server"></asp:TextBox>
             </div>
         </div>
 
@@ -53,6 +55,7 @@
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:Label ID="MsgErrodano" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>                
                 <asp:TextBox ID="ano_fabricante" CssClass="uk-input uk-form-danger"  placeholder="Ano fabricante" runat="server"></asp:TextBox>
             </div>
         </div>  
@@ -60,13 +63,15 @@
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:Label ID="MsgErroplaca" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
                 <asp:TextBox ID="placa" CssClass="uk-input uk-form-danger"  placeholder="Placa" runat="server"></asp:TextBox>
             </div>
         </div>  
 
         <div class="uk-margin">
             <div class="uk-inline">
-                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>                
+                   <asp:Label ID="MsgErrouf" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
                 <asp:TextBox ID="uf" CssClass="uk-input uk-form-danger"  placeholder="UF" runat="server"></asp:TextBox>
             </div>
         </div>  

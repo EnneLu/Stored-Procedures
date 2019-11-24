@@ -22,6 +22,15 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Controle MsgErronome.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErronome;
+        
+        /// <summary>
         /// Controle nometext.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.TextBox nometext;
         
         /// <summary>
+        /// Controle MsgErrodata.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrodata;
+        
+        /// <summary>
         /// Controle datanascimentotext.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Stored_Procedures {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox datanascimentotext;
+        
+        /// <summary>
+        /// Controle MsgErrocpf.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrocpf;
         
         /// <summary>
         /// Controle cpftext.
