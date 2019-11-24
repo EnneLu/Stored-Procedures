@@ -16,14 +16,14 @@ namespace Stored_Procedures
         protected void Button2_Click(object sender, EventArgs e)
         {
             DAL.DAOVeiculo aDAOVeiculo = new DAL.DAOVeiculo();
-            Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idcliente"]));
+            Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idveiculo"]));
             aVeiculo.modelo = modelotext.Text;
-            aVeiculo.fabricante = fabricante.Text;
-            aVeiculo.ano_fabricante = Convert.ToInt32(ano_fabricante.Text);
-            aVeiculo.placa = placa.Text;
-            aVeiculo.uf = uf.Text;
+            aVeiculo.fabricante = fabricantetext.Text;
+            aVeiculo.ano_fabricante = Convert.ToInt32(ano_fabricantetext.Text);
+            aVeiculo.placa = placatext.Text;
+            aVeiculo.uf = uftext.Text;
             aDAOVeiculo.Update(aVeiculo);
-            Response.Redirect("~//WebFormCRUDCliente.aspx");
+            Response.Redirect("~//WebFormCRUDVeiculo.aspx");
         }
     }
 }

@@ -21,12 +21,19 @@ namespace Stored_Procedures.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Veiculo Select(int id)
         {
+            // Variavel para armazenar um veiculo
             Modelo.Veiculo aVeiculo = new Modelo.Veiculo();
-
+            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
             conn.Open();
+            // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * From Veiculo Where id = @id";
+            // define uso do stored procedure
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            // define SQL do comando
+            cmd.CommandText = "Veiculo_select_all";
+            // Executa comando, gerando objeto DbDataReader
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -44,7 +51,7 @@ namespace Stored_Procedures.DAL
             dr.Close();
             conn.Close();
             return aVeiculo;
-    }       
+        }       
 
         //SELECTALL()//
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -121,13 +128,12 @@ namespace Stored_Procedures.DAL
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             // Define comando de update
             cmd.CommandText = "Veiculo_update";
-            cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
-            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
-            cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);
-            cmd.Parameters.AddWithValue("@placa", obj.placa);
-            cmd.Parameters.AddWithValue("@uf", obj.uf);
-
-
+                                cmd.Parameters.AddWithValue("@id", obj.id);
+                                cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
+                                cmd.Parameters.AddWithValue("@modelo", obj.modelo);
+                                cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);
+                                cmd.Parameters.AddWithValue("@placa", obj.placa);
+                                cmd.Parameters.AddWithValue("@uf", obj.uf);
              cmd.ExecuteNonQuery();
          }
 

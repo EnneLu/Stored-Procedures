@@ -51,40 +51,40 @@ namespace Stored_Procedures
         protected global::System.Web.UI.WebControls.TextBox modelotext;
 
         /// <summary>
-        /// Controle fabricante.
+        /// Controle fabricantetext.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fabricante;
+        protected global::System.Web.UI.WebControls.TextBox fabricantetext;
 
         /// <summary>
-        /// Controle ano_fabricante.
+        /// Controle ano_fabricantetext.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ano_fabricante;
+        protected global::System.Web.UI.WebControls.TextBox ano_fabricantetext;
 
         /// <summary>
-        /// Controle placa.
+        /// Controle placatext.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox placa;
+        protected global::System.Web.UI.WebControls.TextBox placatext;
 
         /// <summary>
-        /// Controle uf.
+        /// Controle uftext.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uf;
+        protected global::System.Web.UI.WebControls.TextBox uftext;
 
         /// <summary>
         /// Controle editar.

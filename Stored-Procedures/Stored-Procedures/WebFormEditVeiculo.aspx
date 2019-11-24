@@ -26,7 +26,7 @@
                     <div class="red">
                         <div class="title">
                             <div class=""><a href="WebFormCRUDVeiculo.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
-                            <div class="uk-text-large text-white ">EDITAR VEICULO</div>
+                            <div class="uk-text-large text-white ">EDITAR VEÍCULO</div>
                         </div>
                     </div>
 
@@ -40,10 +40,10 @@
                             </div>
                         </div>
                         <div class="uk-card-body">
-                            <p>Fabricante: <%# DataBinder.Eval(Container.DataItem, "fabricante")%></p>
-                            <p>Ano fabricante: <%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></p>
-                            <p>Placa: <%# DataBinder.Eval(Container.DataItem, "placa")%></p>
-                            <p>UF: <%# DataBinder.Eval(Container.DataItem, "uf")%></p>
+                            <p id="fabricante"><%# DataBinder.Eval(Container.DataItem, "fabricante")%></p>
+                            <p id="ano_fabricante"><%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></p>
+                            <p id="placa"><%# DataBinder.Eval(Container.DataItem, "placa")%></p>
+                            <p id="uf"><%# DataBinder.Eval(Container.DataItem, "uf")%></p>
                         </div>
                         <div class="uk-card-footer">
                         </div>
@@ -66,10 +66,10 @@
                 </div>
             </div>
             <div class="uk-card-body">
-                <p>Fabricante <asp:TextBox ID="fabricante" runat="server"></asp:TextBox></p>
-                <p>Ano fabricante <asp:TextBox ID="ano_fabricante" runat="server"></asp:TextBox></p>
-                <p>Placa <asp:TextBox ID="placa" runat="server"></asp:TextBox></p>
-                <p>UF <asp:TextBox ID="uf" runat="server"></asp:TextBox></p>
+                <p>Fabricante <asp:TextBox ID="fabricantetext" runat="server"></asp:TextBox></p>
+                <p>Ano fabricante <asp:TextBox ID="ano_fabricantetext" runat="server"></asp:TextBox></p>
+                <p>Placa <asp:TextBox ID="placatext" runat="server"></asp:TextBox></p>
+                <p>UF <asp:TextBox ID="uftext" runat="server"></asp:TextBox></p>
             </div>
             <div class="uk-card-footer">
                 <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">editar</asp:LinkButton>
