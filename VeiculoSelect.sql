@@ -11,3 +11,8 @@ begin
 	select * from Veiculo where id = @id
 
 end
+/*
+	
+	exec Veiculo_select_all''
+	
+*/

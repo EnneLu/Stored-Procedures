@@ -11,6 +11,99 @@ CREATE PROCEDURE Veiculo_update
 as
 begin
 
+	--Verificação de id
+		if(@id = '') or ((REPLACE(@id,'','') = ''))
+		begin
+			raiserror('O id não pode ser vazio',16,1)
+			return
+		end
+	--Fim da verificação de id
+
+	--Verificação de fabricante
+		if(@fabricante is null) or ((REPLACE(@fabricante,'','') = ''))
+		begin
+			raiserror('O nome do fabricante não pode ser vazio',16,1)
+			return
+		end
+	--Fim da verificação de fabricante
+
+
+	--Verificação de modelo
+		if(@modelo is null) or ((REPLACE(@modelo,'','') = ''))
+		begin
+			raiserror('O nome do modelo não pode ser vazio',16,1)
+			return
+		end
+	--Fim da verificação de modelo
+
+	--Verificação de ano de fabricação
+		if(@ano_fabricante = '') or ((REPLACE(@ano_fabricante,'','') = ''))
+		begin
+			raiserror('O ano de fabricação não pode ser vazio',16,1)
+			return
+		end
+
+		if(@ano_fabricante > year(getdate()) or (@ano_fabricante not like'[0-9][0-9][0-9][0-9]'))
+		begin
+			raiserror('O ano de fabricação invalido',16,1)
+			return
+		end
+	--Fim da verificação de ano de fabricação
+
+	--Verificação de placa
+		if(@placa is null) or ((REPLACE(@placa,'','') = '')) 
+		begin
+			raiserror('A placa não pode ser vazia',16,1)
+			return
+		end
+		if((@placa not like '[a-z][a-z][0-9][0-9][0-9][a-z][a-z]' ) and (@placa not like '[a-z][a-z][a-z][0-9][0-9][0-9][0-9]') ) 
+		begin
+			raiserror('Placa digitada está no formato invalido',16,1)
+			return
+		end
+	--Fim da verificação de placa
+
+	--Verificação de uf
+		if(@uf is null) or ((REPLACE(@uf,'','') = ''))
+		begin
+			raiserror('A uf não pode ser vazia',16,1)
+			return
+		end
+
+		if((UPPER(@uf) != 'AC') and
+		(UPPER(@uf) != 'AL') and
+		(UPPER(@uf) != 'AP') and
+		(UPPER(@uf) != 'AM') and
+		(UPPER(@uf) != 'BA') and
+		(UPPER(@uf) != 'CE') and
+		(UPPER(@uf) != 'DF') and
+		(UPPER(@uf) != 'ES') and
+		(UPPER(@uf) != 'GO') and
+		(UPPER(@uf) != 'MA') and
+		(UPPER(@uf) != 'MT') and
+		(UPPER(@uf) != 'MS') and
+		(UPPER(@uf) != 'MG') and
+		(UPPER(@uf) != 'PA') and
+		(UPPER(@uf) != 'PB') and
+		(UPPER(@uf) != 'PR') and
+		(UPPER(@uf) != 'PE') and
+		(UPPER(@uf) != 'PI') and
+		(UPPER(@uf) != 'RJ') and
+		(UPPER(@uf) != 'RN') and
+		(UPPER(@uf) != 'RS') and
+		(UPPER(@uf) != 'RO') and
+		(UPPER(@uf) != 'RR') and
+		(UPPER(@uf) != 'SC') and
+		(UPPER(@uf) != 'SP') and
+		(UPPER(@uf) != 'SE') and
+		(UPPER(@uf) != 'TO'))
+		begin
+			raiserror('UF invalida',16,1)
+			return
+		end
+
+	--Fim da verificação de uf
+
 	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricante = @ano_fabricante,placa = @placa,uf = @uf where id = @id
 
 end

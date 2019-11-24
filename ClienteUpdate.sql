@@ -39,6 +39,12 @@ begin
 			raiserror('Data incorreta',16,1)
 			return
 		end
+
+		if(@data_nascimento > CONVERT(varchar(10), GETDATE(),103))
+		begin
+			raiserror('Data invalida',16,1)
+			return
+		end
 	--Fim da verificação de data
 
 

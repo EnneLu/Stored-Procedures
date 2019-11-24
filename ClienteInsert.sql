@@ -30,7 +30,13 @@ begin
 
 		if(ISDATE(@data_nascimento) = 0)
 		begin
-			raiserror('Data incorreta',16,1)
+			raiserror('Data invalida',16,1)
+			return
+		end
+
+		if(@data_nascimento > CONVERT(varchar(10), GETDATE(),103))
+		begin
+			raiserror('Data invalida',16,1)
 			return
 		end
 	--Fim da verificação de data
@@ -63,7 +69,6 @@ Funciona
 
 
 Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
-
 
 */
 
