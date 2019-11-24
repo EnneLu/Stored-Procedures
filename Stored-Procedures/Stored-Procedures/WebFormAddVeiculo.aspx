@@ -12,12 +12,12 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
 <link rel="stylesheet" href="css/crudStyle.css" />
-    <title></title>
+    <title>Veiculo</title>
 </head>
 <body>
 <form id="form1" runat="server">
+<div>
 <div class="corpo">
-
     <div class="tableArea">
         <div class="red">
             <div class="title">
@@ -25,25 +25,55 @@
                 <div class="uk-text-large text-white ">ADICIONAR VEICULO</div>
             </div>
         </div>
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Fabricante"></asp:Label>
-            <asp:TextBox ID="fabricante" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label ID="Label2" runat="server" Text="Modelo"></asp:Label>
-            <asp:TextBox ID="modelo" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label ID="Label3" runat="server" Text="Ano Fabricante"></asp:Label>
-            <asp:TextBox ID="ano_fabricante" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label ID="Label4" runat="server" Text="Placa"></asp:Label>
-            <asp:TextBox ID="placa" runat="server"></asp:TextBox>
-            <br/>
-            <asp:Label ID="Label5" runat="server" Text="UF"></asp:Label>
-            <asp:TextBox ID="uf" runat="server"></asp:TextBox>
-            <br />
-            <asp:Button ID="salvar" runat="server" Text="SALVAR" OnClick="salvar_Click"/>
-            <asp:Button ID="cancelar" runat="server" Text="CANCELAR"/>
+
+        <div class="uk-margin">
+            <label class="uk-form-label text-white" for="form-stacked-text">preencha os campos abaixo</label>
+            <div class="uk-form-controls">
+                
+            </div>
         </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <asp:TextBox CssClass="uk-input uk-form-danger" ID="fabricante" placeholder="Fabricante" runat="server"></asp:TextBox>
+            </div>
+        </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: calendar"></span>
+                    <asp:TextBox ID="modelo" CssClass="uk-input uk-form-danger"  placeholder="Modelo"  runat="server"></asp:TextBox>
+            </div>
+        </div>
+
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:TextBox ID="ano_fabricante" CssClass="uk-input uk-form-danger"  placeholder="Ano fabricante" runat="server"></asp:TextBox>
+            </div>
+        </div>  
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:TextBox ID="placa" CssClass="uk-input uk-form-danger"  placeholder="Placa" runat="server"></asp:TextBox>
+            </div>
+        </div>  
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
+                <asp:TextBox ID="uf" CssClass="uk-input uk-form-danger"  placeholder="UF" runat="server"></asp:TextBox>
+            </div>
+        </div>  
+        <asp:LinkButton ID="btnsalvar" CssClass="uk-button  uk-button-danger btn" OnClick="salvar_Click" runat="server">Adicionar</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton2" CssClass="uk-button  btn" OnClick="salvar_Click" runat="server" PostBackUrl="~/WebFormCRUDVeiculo.aspx">Cancelar</asp:LinkButton>
+    </div>
+</div>
 </div>
 </form>
 </body>

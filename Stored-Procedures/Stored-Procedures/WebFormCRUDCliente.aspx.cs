@@ -30,6 +30,15 @@ namespace Stored_Procedures
                 // Chama a tela de edição
                 Response.Redirect("~//WebFormViewCliente.aspx");
             }
+            //Verifica se o comando é "Deletar"
+            if (e.CommandName.ToString() == "DELETAR")
+            {
+                DAL.DAOCliente aDAOCliente = new DAL.DAOCliente();
+                Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
+                aDAOCliente.Delete(aCliente);
+                Response.Redirect("~//WebFormCRUDCliente.aspx");
+            }
         }
     }
 }
+                

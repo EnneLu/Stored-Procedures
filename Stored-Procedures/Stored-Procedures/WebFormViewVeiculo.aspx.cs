@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Stored_Procedures
 {
-    public partial class WebFormCRUDVeiculo : System.Web.UI.Page
+    public partial class WebFormViewVeiculo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,15 +27,7 @@ namespace Stored_Procedures
                 Session["idveiculo"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//WebFormViewVeiculo.aspx");
-            }
-            //Verifica se o comando é "Deletar"
-            if (e.CommandName.ToString() == "DELETAR")
-            {
-                DAL.DAOCliente aDAOCliente = new DAL.DAOCliente();
-                Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
-                aDAOCliente.Delete(aCliente);
-                Response.Redirect("~//WebFormCRUDVeiculo.aspx");
+                Response.Redirect("~//WebFormEditVeiculo.aspx");
             }
         }
     }

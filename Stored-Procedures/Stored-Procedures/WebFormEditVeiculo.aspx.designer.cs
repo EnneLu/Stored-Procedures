@@ -11,7 +11,7 @@ namespace Stored_Procedures
 {
 
 
-    public partial class WebFormAddVeiculo
+    public partial class WebFormEditVeiculo1
     {
 
         /// <summary>
@@ -24,6 +24,33 @@ namespace Stored_Procedures
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controle Repeater1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+
+        /// <summary>
+        /// Controle modelotext.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox modelotext;
+
+        /// <summary>
         /// Controle fabricante.
         /// </summary>
         /// <remarks>
@@ -31,15 +58,6 @@ namespace Stored_Procedures
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox fabricante;
-
-        /// <summary>
-        /// Controle modelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox modelo;
 
         /// <summary>
         /// Controle ano_fabricante.
@@ -69,21 +87,12 @@ namespace Stored_Procedures
         protected global::System.Web.UI.WebControls.TextBox uf;
 
         /// <summary>
-        /// Controle btnsalvar.
+        /// Controle editar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnsalvar;
-
-        /// <summary>
-        /// Controle LinkButton2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.LinkButton editar;
     }
 }

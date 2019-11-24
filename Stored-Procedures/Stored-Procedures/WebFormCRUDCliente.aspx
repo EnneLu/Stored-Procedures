@@ -14,13 +14,12 @@
 <link rel="stylesheet" href="css/crudStyle.css" />
 
 
-    <title></title>
+    <title>Cliente</title>
 </head>
 <body>
 <form id="form1" runat="server">
 <div>
     <div class="corpo">
-
         <div class="tableArea">
                 <div class="red">
                         <div class="title">
@@ -29,9 +28,6 @@
                         </div>
                         <div class=""><a class="uk-button uk-button-default text-white btn" href="WebFormAddCliente.aspx">ADICIONAR</a></div>
                 </div>
-
-
-
             <table class="uk-table  text-white">
                 <caption></caption>
                 <thead>
@@ -56,7 +52,7 @@
                                 <td><%# DataBinder.Eval(Container.DataItem, "data_nascimento")%></td>
                                 <td><%# DataBinder.Eval(Container.DataItem, "cpf")%></td>                               
                                 <td><asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton></td>
-                                <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
+                                <td><asp:LinkButton ID="btnDel" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="DELETAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="trash"></i></asp:LinkButton></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>

@@ -19,7 +19,7 @@ namespace Stored_Procedures.DAL
 
         //SELECIONAR//
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Veiculo Select(string id)
+        public Modelo.Veiculo Select(int id)
         {
             Modelo.Veiculo aUsuario = new Modelo.Veiculo();
 
@@ -143,8 +143,8 @@ namespace Stored_Procedures.DAL
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             // Define comando de update
             cmd.CommandText = "Veiculo_delete";
-             cmd.Parameters.AddWithValue("@id", obj.id);
-             cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.ExecuteNonQuery();
          }         
     }
 }

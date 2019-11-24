@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
 <link rel="stylesheet" href="css/crudStyle.css" />
-    <title></title>
+    <title>Veiculo</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,7 +50,7 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceVeiculo">
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceVeiculo" OnItemCommand="Repeater1_ItemCommand">
                             <ItemTemplate>
                                 <tr>
                                     <td><%# DataBinder.Eval(Container.DataItem, "fabricante")%></td>
@@ -59,8 +59,8 @@
                                     <td><%# DataBinder.Eval(Container.DataItem, "placa")%></td>
                                     <td><%# DataBinder.Eval(Container.DataItem, "uf")%></td>
 
-                                    <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="pencil"></i></a></td>
-                                    <td><a class="uk-button  uk-button-danger btn" type="button"><i uk-icon="trash"></i></a></td>
+                                    <td><asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton></td>
+                                <td><asp:LinkButton ID="btnDel" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="DELETAR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="trash"></i></asp:LinkButton></td>
                                 </tr>
                             </ItemTemplate>
                         </asp:Repeater>

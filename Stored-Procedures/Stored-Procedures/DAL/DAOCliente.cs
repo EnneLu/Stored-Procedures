@@ -156,8 +156,8 @@ namespace Stored_Procedures.DAL
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             // Define comando de update
             cmd.CommandText = "Cliente_delete";
-             cmd.Parameters.AddWithValue("@id", obj.id);
-             cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.ExecuteNonQuery();
          }
     }
 }

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/crudStyle.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="script/script.js"></script>
-    <title></title>
+    <title>Cliente</title>
 </head>
 <body>
 <form id="form1" runat="server">
