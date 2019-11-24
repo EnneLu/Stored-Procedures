@@ -25,7 +25,6 @@
             <!--Repeater para mostrar dados do cliente-->
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater1_ItemCommand">
                 <ItemTemplate>
-
             <div class="red">
                 <div class="title">
                     <div class=""><a href="WebFormCRUDCliente.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
@@ -48,10 +47,10 @@
                         <p>CPF: <%# DataBinder.Eval(Container.DataItem, "cpf")%></p>
                     </div>
                     <div class="uk-card-footer">
-                       <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR"  CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>><i uk-icon="pencil"></i></asp:LinkButton>
+                       <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="DELETAR"  CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id")%>>DELETAR</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" CssClass="uk-button  btn" runat="server" PostBackUrl="~/WebFormCRUDCliente.aspx">Cancelar</asp:LinkButton>
                     </div>
                 </div>
-
                 </ItemTemplate>
             </asp:Repeater>
             <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="Stored_Procedures.DAL.DAOCliente">

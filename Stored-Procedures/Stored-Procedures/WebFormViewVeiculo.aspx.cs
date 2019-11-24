@@ -15,19 +15,14 @@ namespace Stored_Procedures
         }
         protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            //Verifica se o comando é "Editar"
-            if (e.CommandName.ToString() == "EDITAR")
+            if (e.CommandName.ToString() == "DELETAR")
             {
-                //string id;
-
-                // Lê o número da linha selecionada
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
-
-                // Grava código do Livro na sessão
                 Session["idveiculo"] = id;
-
-                // Chama a tela de edição
-                Response.Redirect("~//WebFormEditVeiculo.aspx");
+                DAL.DAOVeiculo aDAOVeiculo = new DAL.DAOVeiculo();
+                Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idveiculo"]));
+                aDAOVeiculo.Delete(aVeiculo);
+                Response.Redirect("~//WebFormCRUDVeiculo.aspx");
             }
         }
     }

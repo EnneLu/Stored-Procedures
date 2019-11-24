@@ -27,17 +27,21 @@ namespace Stored_Procedures
                 Session["idveiculo"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//WebFormViewVeiculo.aspx");
+                Response.Redirect("~//WebFormEditVeiculo.aspx");
             }
             //Verifica se o comando é "Deletar"
             if (e.CommandName.ToString() == "DELETAR")
             {
+                //string id;
+
+                // Lê o número da linha selecionada
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
+
+                // Grava código do Livro na sessão
                 Session["idveiculo"] = id;
-                DAL.DAOVeiculo aDAOVeiculo = new DAL.DAOVeiculo();
-                Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idveiculo"]));
-                aDAOVeiculo.Delete(aVeiculo);
-                Response.Redirect("~//WebFormCRUDVeiculo.aspx");
+
+                // Chama a tela de edição
+                Response.Redirect("~//WebFormViewVeiculo.aspx");
             }
         }
     }

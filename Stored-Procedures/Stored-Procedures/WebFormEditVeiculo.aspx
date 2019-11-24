@@ -41,7 +41,7 @@
                         </div>
                         <div class="uk-card-body">
                             <p id="fabricante"><%# DataBinder.Eval(Container.DataItem, "fabricante")%></p>
-                            <p id="ano_fabricante"><%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></p>
+                            <p id="ano_fabricacao"><%# DataBinder.Eval(Container.DataItem, "ano_fabricacao")%></p>
                             <p id="placa"><%# DataBinder.Eval(Container.DataItem, "placa")%></p>
                             <p id="uf"><%# DataBinder.Eval(Container.DataItem, "uf")%></p>
                         </div>
@@ -67,12 +67,13 @@
             </div>
             <div class="uk-card-body">
                 <p>Fabricante <asp:TextBox ID="fabricantetext" runat="server"></asp:TextBox></p>
-                <p>Ano fabricante <asp:TextBox ID="ano_fabricantetext" runat="server"></asp:TextBox></p>
+                <p>Ano fabricação <asp:TextBox ID="ano_fabricacaotext" runat="server"></asp:TextBox></p>
                 <p>Placa <asp:TextBox ID="placatext" runat="server"></asp:TextBox></p>
                 <p>UF <asp:TextBox ID="uftext" runat="server"></asp:TextBox></p>
             </div>
             <div class="uk-card-footer">
-                <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">editar</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">EDITAR</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" CssClass="uk-button  btn" runat="server" PostBackUrl="~/WebFormCRUDVeiculo.aspx">Cancelar</asp:LinkButton>
             </div>
         </div>            
     </div>

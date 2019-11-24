@@ -19,7 +19,7 @@ namespace Stored_Procedures
             Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idveiculo"]));
             aVeiculo.modelo = modelotext.Text;
             aVeiculo.fabricante = fabricantetext.Text;
-            aVeiculo.ano_fabricante = Convert.ToInt32(ano_fabricantetext.Text);
+            aVeiculo.ano_fabricacao = Convert.ToInt32(ano_fabricacaotext.Text);
             aVeiculo.placa = placatext.Text;
             aVeiculo.uf = uftext.Text;
             aDAOVeiculo.Update(aVeiculo);

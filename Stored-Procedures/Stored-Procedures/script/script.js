@@ -5,7 +5,7 @@
     $("#cpftext").val($("#cpf").text());
     $("#modelotext").val($("#modelo").text());
     $("#fabricantetext").val($("#fabricante").text());
-    $("#ano_fabricantetext").val($("#ano_fabricante").text());
+    $("#ano_fabricacaotext").val($("#ano_fabricacao").text());
     $("#placatext").val($("#placa").text());
     $("#uftext").val($("#uf").text());
     $("#hide").click(function () {

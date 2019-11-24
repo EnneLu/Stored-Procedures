@@ -50,7 +50,7 @@
                                 <tr>
                                     <td><%# DataBinder.Eval(Container.DataItem, "fabricante")%></td>
                                     <td><%# DataBinder.Eval(Container.DataItem, "modelo")%></td>
-                                    <td><%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem, "ano_fabricacao")%></td>
                                     <td><%# DataBinder.Eval(Container.DataItem, "placa")%></td>
                                     <td><%# DataBinder.Eval(Container.DataItem, "uf")%></td>
 

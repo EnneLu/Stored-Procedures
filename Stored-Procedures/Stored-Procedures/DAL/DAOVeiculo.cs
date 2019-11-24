@@ -43,7 +43,7 @@ namespace Stored_Procedures.DAL
                     aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()),
                                             dr["fabricante"].ToString(), 
                                             dr["modelo"].ToString(),
-                                            Convert.ToInt32(dr["ano_fabricante"].ToString()),
+                                            Convert.ToInt32(dr["ano_fabricacao"].ToString()),
                                             dr["placa"].ToString(),
                                             dr["uf"].ToString());
                 }
@@ -81,7 +81,7 @@ namespace Stored_Procedures.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()), dr["fabricante"].ToString(), dr["modelo"].ToString(),Convert.ToInt32(dr["ano_fabricante"].ToString()),dr["placa"].ToString(),dr["uf"].ToString());
+                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()), dr["fabricante"].ToString(), dr["modelo"].ToString(),Convert.ToInt32(dr["ano_fabricacao"].ToString()),dr["placa"].ToString(),dr["uf"].ToString());
                     aListVeiculo.Add(aVeiculo);
                 }
             }
@@ -108,7 +108,7 @@ namespace Stored_Procedures.DAL
 
             cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
-            cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);
+            cmd.Parameters.AddWithValue("@ano_fabricacao", obj.ano_fabricacao);
             cmd.Parameters.AddWithValue("@placa", obj.placa);
             cmd.Parameters.AddWithValue("@uf", obj.uf);
 
@@ -131,7 +131,7 @@ namespace Stored_Procedures.DAL
                                 cmd.Parameters.AddWithValue("@id", obj.id);
                                 cmd.Parameters.AddWithValue("@fabricante", obj.fabricante);
                                 cmd.Parameters.AddWithValue("@modelo", obj.modelo);
-                                cmd.Parameters.AddWithValue("@ano_fabricante", obj.ano_fabricante);
+                                cmd.Parameters.AddWithValue("@ano_fabricacao", obj.ano_fabricacao);
                                 cmd.Parameters.AddWithValue("@placa", obj.placa);
                                 cmd.Parameters.AddWithValue("@uf", obj.uf);
              cmd.ExecuteNonQuery();

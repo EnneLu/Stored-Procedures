@@ -72,7 +72,8 @@
                 <p>CPF <asp:TextBox ID="cpftext" runat="server"></asp:TextBox></p>
             </div>
             <div class="uk-card-footer">
-                <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">editar</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">Editar</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" CssClass="uk-button  btn" runat="server" PostBackUrl="~/WebFormCRUDCliente.aspx">Cancelar</asp:LinkButton>
             </div>
         </div>            
     </div>

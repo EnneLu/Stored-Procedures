@@ -39,12 +39,13 @@
                         </div>
                         <div class="uk-card-body">
                             <p>Fabricante: <%# DataBinder.Eval(Container.DataItem, "fabricante")%></p>
-                            <p>Ano fabricante: <%# DataBinder.Eval(Container.DataItem, "ano_fabricante")%></p>
+                            <p>Ano fabricação: <%# DataBinder.Eval(Container.DataItem, "ano_fabricacao")%></p>
                             <p>Placa: <%# DataBinder.Eval(Container.DataItem, "placa")%></p>
                             <p>UF: <%# DataBinder.Eval(Container.DataItem, "uf")%></p>
                         </div>
                         <div class="uk-card-footer">
-                            <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="EDITAR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id")%>'><i uk-icon="pencil"></i></asp:LinkButton>
+                            <asp:LinkButton ID="btnEdit" CssClass="uk-button  uk-button-danger btn" runat="server" CommandName="DELETAR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id")%>'>Excluir</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton2" CssClass="uk-button  btn" runat="server" PostBackUrl="~/WebFormCRUDVeiculo.aspx">Cancelar</asp:LinkButton>
                         </div>
                     </div>
                 </ItemTemplate>

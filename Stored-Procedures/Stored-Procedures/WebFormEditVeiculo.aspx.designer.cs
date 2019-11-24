@@ -60,13 +60,13 @@ namespace Stored_Procedures
         protected global::System.Web.UI.WebControls.TextBox fabricantetext;
 
         /// <summary>
-        /// Controle ano_fabricantetext.
+        /// Controle ano_fabricacaotext.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ano_fabricantetext;
+        protected global::System.Web.UI.WebControls.TextBox ano_fabricacaotext;
 
         /// <summary>
         /// Controle placatext.
@@ -94,5 +94,14 @@ namespace Stored_Procedures
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton editar;
+
+        /// <summary>
+        /// Controle LinkButton2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
     }
 }
