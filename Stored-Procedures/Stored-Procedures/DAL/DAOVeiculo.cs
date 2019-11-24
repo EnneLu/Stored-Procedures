@@ -21,7 +21,7 @@ namespace Stored_Procedures.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Veiculo Select(int id)
         {
-            Modelo.Veiculo aUsuario = new Modelo.Veiculo();
+            Modelo.Veiculo aVeiculo = new Modelo.Veiculo();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -33,7 +33,7 @@ namespace Stored_Procedures.DAL
             {
                 while (dr.Read())
                 {
-                    aUsuario = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()),
+                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()),
                                             dr["fabricante"].ToString(), 
                                             dr["modelo"].ToString(),
                                             Convert.ToInt32(dr["ano_fabricante"].ToString()),
@@ -43,7 +43,7 @@ namespace Stored_Procedures.DAL
             }
             dr.Close();
             conn.Close();
-            return aUsuario;
+            return aVeiculo;
     }       
 
         //SELECTALL()//
@@ -141,7 +141,7 @@ namespace Stored_Procedures.DAL
              SqlCommand cmd = conn.CreateCommand();
             // define uso do stored procedure
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            // Define comando de update
+            // Define comando de delete
             cmd.CommandText = "Veiculo_delete";
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.ExecuteNonQuery();

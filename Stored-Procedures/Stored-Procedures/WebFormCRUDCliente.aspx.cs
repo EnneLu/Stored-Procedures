@@ -33,6 +33,8 @@ namespace Stored_Procedures
             //Verifica se o comando é "Deletar"
             if (e.CommandName.ToString() == "DELETAR")
             {
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+                Session["idcliente"] = id;
                 DAL.DAOCliente aDAOCliente = new DAL.DAOCliente();
                 Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
                 aDAOCliente.Delete(aCliente);

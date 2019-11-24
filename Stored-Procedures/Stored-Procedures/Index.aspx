@@ -39,7 +39,7 @@
                         <div class="face face1">
                             <a href="WebFormCRUDVeiculo.aspx" class="conteudo">
                                 <i class="material-icons bg">airport_shuttle</i>
-                                <h3>Veiculo</h3>
+                                <h3>Veículo</h3>
                             </a>
                         </div>
                         <div class="face face2">

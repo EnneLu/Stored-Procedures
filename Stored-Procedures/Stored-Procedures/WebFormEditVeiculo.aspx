@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/crudStyle.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="script/script.js"></script>
-    <title>Veiculo</title>
+    <title>Veículo</title>
 </head>
 <body>
 <form id="form1" runat="server">
@@ -25,7 +25,7 @@
                 <div class="tableArea">
                     <div class="red">
                         <div class="title">
-                            <div class=""><a href="WebFormCRUDCliente.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
+                            <div class=""><a href="WebFormCRUDVeiculo.aspx" class="text-white pulse" uk-icon="icon:arrow-left; ratio: 1.5"></a></div>
                             <div class="uk-text-large text-white ">EDITAR VEICULO</div>
                         </div>
                     </div>
@@ -51,11 +51,9 @@
             </ItemTemplate>
         </asp:Repeater>
         <!--fim do repeater para edicao-->
-
-
         <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" DataObjectTypeName="Stored_Procedures.Modelo.Veiculo" SelectMethod="Select" TypeName="Stored_Procedures.DAL.DAOVeiculo" UpdateMethod="Update">
             <SelectParameters>
-                <asp:SessionParameter SessionField="idveiculo" DefaultValue="id" Name="id" Type="Int32"></asp:SessionParameter>
+                <asp:SessionParameter SessionField="idveiculo" Name="id" Type="Int32"></asp:SessionParameter>
             </SelectParameters>
         </asp:ObjectDataSource>
         <div class="uk-card uk-card-default" id="show">

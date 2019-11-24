@@ -32,9 +32,11 @@ namespace Stored_Procedures
             //Verifica se o comando é "Deletar"
             if (e.CommandName.ToString() == "DELETAR")
             {
-                DAL.DAOCliente aDAOCliente = new DAL.DAOCliente();
-                Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
-                aDAOCliente.Delete(aCliente);
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+                Session["idveiculo"] = id;
+                DAL.DAOVeiculo aDAOVeiculo = new DAL.DAOVeiculo();
+                Modelo.Veiculo aVeiculo = aDAOVeiculo.Select(Convert.ToInt32(Session["idveiculo"]));
+                aDAOVeiculo.Delete(aVeiculo);
                 Response.Redirect("~//WebFormCRUDVeiculo.aspx");
             }
         }

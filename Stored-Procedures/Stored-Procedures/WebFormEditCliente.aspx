@@ -21,8 +21,6 @@
 <div>
     <div class="corpo">
 
-
-
         <!--repeater para edicao-->
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSourceEdit">
             <ItemTemplate>
@@ -64,14 +62,14 @@
             <div class="uk-card-header">
                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-expand">
-                        <h3 class="uk-card-title uk-margin-remove-bottom">Nome:<asp:TextBox ID="nometext" runat="server"></asp:TextBox></h3>
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Nome <asp:TextBox ID="nometext" runat="server"></asp:TextBox></h3>
                         <p class="uk-text-meta uk-margin-remove-top"></p>
                     </div>
                 </div>
             </div>
             <div class="uk-card-body">
-                <p>Data de nascimento: <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox></p>
-                <p>CPF: <asp:TextBox ID="cpftext" runat="server"></asp:TextBox></p>
+                <p>Data de nascimento <asp:TextBox ID="datanascimentotext" runat="server"></asp:TextBox></p>
+                <p>CPF <asp:TextBox ID="cpftext" runat="server"></asp:TextBox></p>
             </div>
             <div class="uk-card-footer">
                 <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">editar</asp:LinkButton>
