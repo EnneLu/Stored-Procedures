@@ -23,10 +23,10 @@ namespace Stored_Procedures
                 MsgErromodelo.Text = Session["MsgErromodelo"].ToString();
                 Session["MsgErromodelo"] = null;
             }
-            if ((Session["MsgErrodano"] != null) && (Session["MsgErrodano"].ToString() != ""))
+            if ((Session["MsgErroano"] != null) && (Session["MsgErroano"].ToString() != ""))
             {
-                MsgErrodano.Text = Session["MsgErrodano"].ToString();
-                Session["MsgErrodano"] = null;
+                MsgErroano.Text = Session["MsgErroano"].ToString();
+                Session["MsgErroano"] = null;
             }
             if ((Session["MsgErroplaca"] != null) && (Session["MsgErroplaca"].ToString() != ""))
             {
@@ -46,7 +46,7 @@ namespace Stored_Procedures
             DAL.DAOVeiculo aDAOVeiculo;
 
             // Instancia um Objeto de Livro com as informações fornecidas
-            aVeiculo = new Modelo.Veiculo(1, fabricante.Text, modelo.Text, Convert.ToInt32(ano_fabricante.Text), placa.Text, uf.Text);
+            aVeiculo = new Modelo.Veiculo(1, fabricante.Text, modelo.Text, Convert.ToInt32(ano_fabricacao.Text), placa.Text, uf.Text);
 
 
             // Instancia objeto da camada de negocio
@@ -74,6 +74,8 @@ namespace Stored_Procedures
                 if ((error.Message.Contains("O ano de fabricação não pode ser vazio")) || (error.Message.Contains("O ano de fabricação invalido"))) Session["MsgErrofabricante"] = "O nome do fabricante não pode ser vazio";
 
                 if (error.Message.Contains("O nome do modelo não pode ser vazio")) Session["MsgErromodelo"] = "O nome do modelo não pode ser vazio";
+                if (error.Message.Contains("A cadeia de caracteres de entrada não estava em um formato correto.")) Session["MsgErromodelo"] = "O nome do modelo não pode ser vazio";
+               
 
             }
 

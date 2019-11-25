@@ -55,8 +55,8 @@
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: credit-card"></span>
-                <asp:Label ID="MsgErrodano" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>                
-                <asp:TextBox ID="ano_fabricante" CssClass="uk-input uk-form-danger"  placeholder="Ano fabricante" runat="server"></asp:TextBox>
+                <asp:Label ID="MsgErroano" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>                
+                <asp:TextBox ID="ano_fabricacao" CssClass="uk-input uk-form-danger"  placeholder="Ano de fabricacao" runat="server"></asp:TextBox>
             </div>
         </div>  
 

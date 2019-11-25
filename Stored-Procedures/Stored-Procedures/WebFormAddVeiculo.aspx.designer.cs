@@ -58,22 +58,22 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.TextBox modelo;
         
         /// <summary>
-        /// Controle MsgErrodano.
+        /// Controle MsgErroano.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErrodano;
+        protected global::System.Web.UI.WebControls.Label MsgErroano;
         
         /// <summary>
-        /// Controle ano_fabricante.
+        /// Controle ano_fabricacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ano_fabricante;
+        protected global::System.Web.UI.WebControls.TextBox ano_fabricacao;
         
         /// <summary>
         /// Controle MsgErroplaca.

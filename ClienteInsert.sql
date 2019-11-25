@@ -27,7 +27,7 @@ begin
 			raiserror('O nome não pode ser vazio',16,1)
 			return
 		end
-
+		
 		if(ISDATE(@data_nascimento) = 0)
 		begin
 			raiserror('Data invalida',16,1)
