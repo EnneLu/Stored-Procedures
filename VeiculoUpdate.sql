@@ -5,7 +5,7 @@ CREATE PROCEDURE Veiculo_update
 	@id	int,
 	@fabricante	VARCHAR(60),
 	@modelo	VARCHAR(60),
-	@ano_fabricante INT,
+	@ano_fabricacao INT,
 	@placa CHAR(8),
 	@uf CHAR(2)
 as
@@ -37,13 +37,13 @@ begin
 	--Fim da verificação de modelo
 
 	--Verificação de ano de fabricação
-		if(@ano_fabricante = '') or ((REPLACE(@ano_fabricante,'','') = ''))
+		if(@ano_fabricacao = '') or ((REPLACE(@ano_fabricacao,'','') = ''))
 		begin
 			raiserror('O ano de fabricação não pode ser vazio',16,1)
 			return
 		end
 
-		if(@ano_fabricante > year(getdate()) or (@ano_fabricante not like'[0-9][0-9][0-9][0-9]'))
+		if(@ano_fabricacao > year(getdate()) or (@ano_fabricacao not like'[0-9][0-9][0-9][0-9]'))
 		begin
 			raiserror('O ano de fabricação invalido',16,1)
 			return
@@ -104,6 +104,6 @@ begin
 
 	--Fim da verificação de uf
 
-	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricante = @ano_fabricante,placa = @placa,uf = @uf where id = @id
+	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricante = @ano_fabricacao,placa = @placa,uf = @uf where id = @id
 
 end

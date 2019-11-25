@@ -103,24 +103,16 @@ end
 
 Funciona
 
-	exec  Veiculo_insert 'Gurgel','BR-800','1988','MZV-6877','RN'
+	exec  Veiculo_insert 'Gurgel','BR-800','1988','MZV6877','RN'
 	exec  Veiculo_insert 'Mitsubishi','Space Wagon GLXi 2.4 ( Nova S','1999','AJX2006','AC'
-	exec  Veiculo_insert 'Porsche','911 Carrera Cabriolet 3.4/ 3.6 Mec','1995','JAI-7695','MT'
-	exec  Veiculo_insert 'Hyundai','ix35 2.0 Launching Edition 16V Flex Aut.','2016','HZY-6421','PI'
-	exec  Veiculo_insert 'Subaru','Impreza WRX 2.5 16V TB 4x4 5p','2007','MZK-4402','MG'
-	exec  Veiculo_insert 'Mitsubishi','Colt GTi Mec','1995','GLT-8528','PB'
-	exec  Veiculo_insert 'LIFAN','530 TALENT 1.5 16V 103cv 4p','2015','MNW-4744','RN'
-	exec  Veiculo_insert 'Ford','KA GL 1.0i Zetec Rocam','2000','MOB-4370','PE'
-	exec  Veiculo_insert 'Dodge','Dakota Sport 3.9 V6 CD Mec.','2001','MOD-5244','RN'
-	exec  Veiculo_insert 'Cadillac','Seville 4.6','1991','MNH-1733','RN'
-
-
-
-
-
-Não Funciona exec  Cliente_insert 'Diogo','28/02/2002','10547286407'
-
-
+	exec  Veiculo_insert 'Porsche','911 Carrera Cabriolet 3.4/ 3.6 Mec','1995','JAI7695','MT'
+	exec  Veiculo_insert 'Hyundai','ix35 2.0 Launching Edition 16V Flex Aut.','2016','HZY6421','PI'
+	exec  Veiculo_insert 'Subaru','Impreza WRX 2.5 16V TB 4x4 5p','2007','MZK4402','MG'
+	exec  Veiculo_insert 'Mitsubishi','Colt GTi Mec','1995','GLT8528','PB'
+	exec  Veiculo_insert 'LIFAN','530 TALENT 1.5 16V 103cv 4p','2015','MNW4744','RN'
+	exec  Veiculo_insert 'Ford','KA GL 1.0i Zetec Rocam','2000','MOB4370','PE'
+	exec  Veiculo_insert 'Dodge','Dakota Sport 3.9 V6 CD Mec.','2001','MOD5244','RN'
+	exec  Veiculo_insert 'Cadillac','Seville 4.6','1991','MNH1733','RN'
 
 */
 
