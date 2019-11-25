@@ -46,7 +46,7 @@ namespace Stored_Procedures.DAL
                  while (dr.Read()) // Le o proximo registro
                  {
                      // Cria objeto com dados lidos do banco de dados
-                     aCliente = new Modelo.Cliente(Convert.ToInt32(dr["id"].ToString()), dr["nome"].ToString(), Convert.ToDateTime(dr["data_nascimento"].ToString()), dr["cpf"].ToString());
+                     aCliente = new Modelo.Cliente(Convert.ToInt32(dr["id"].ToString()), dr["nome"].ToString(), dr["data_nascimento"].ToString(), dr["cpf"].ToString());
                      aListCliente.Add(aCliente);
                  }
              }
@@ -86,7 +86,8 @@ namespace Stored_Procedures.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     aCliente = new Modelo.Cliente(Convert.ToInt32(dr["id"].ToString()), 
-                               dr["nome"].ToString(), Convert.ToDateTime(dr["data_nascimento"].ToString()),
+                               dr["nome"].ToString(),
+                               dr["data_nascimento"].ToString(),
                                dr["cpf"].ToString());
                 }
             }   

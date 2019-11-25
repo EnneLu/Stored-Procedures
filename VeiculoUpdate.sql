@@ -104,6 +104,6 @@ begin
 
 	--Fim da verificação de uf
 
-	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricante = @ano_fabricacao,placa = @placa,uf = @uf where id = @id
+	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricacao = @ano_fabricacao,placa = @placa,uf = @uf where id = @id
 
 end

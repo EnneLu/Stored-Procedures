@@ -35,7 +35,7 @@ namespace Stored_Procedures
             DAL.DAOCliente aDAOCliente  = new DAL.DAOCliente();
             Modelo.Cliente aCliente = aDAOCliente.Select(Convert.ToInt32(Session["idcliente"]));
             aCliente.nome = nometext.Text;
-            aCliente.data_nascimento = Convert.ToDateTime(datanascimentotext.Text);
+            aCliente.data_nascimento = datanascimentotext.Text;
             aCliente.cpf = cpftext.Text;
 
             
@@ -57,7 +57,9 @@ namespace Stored_Procedures
                 if (error.Message.Contains("Data invalida")) Session["MsgErrodata"] = "Data inválida";
 
                 if (error.Message.Contains("Cadeia de caracteres não foi reconhecida como DateTime válido.")) Session["MsgErrodata"] = "Data inválida";
-                
+
+                if (error.Message.Contains("Formato invalido")) Session["MsgErrodata"] = "Formato inválido";
+
                 if (error.Message.Contains("Cpf incorreto")) Session["MsgErrocpf"] = "Cpf incorreto";
 
             }

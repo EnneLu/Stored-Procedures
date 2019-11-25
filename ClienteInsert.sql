@@ -10,7 +10,7 @@ as
 begin
 	declare @verificarCpf bit
 	set @verificarCpf  = (select dbo.validarCpf(@cpf))
-
+	SET LANGUAGE 'Brazilian'
 
 	--Verificação de nome
 		if(@nome is null) or ((REPLACE(@nome,'','') = ''))
@@ -33,8 +33,13 @@ begin
 			raiserror('Data invalida',16,1)
 			return
 		end
+		if(@data_nascimento not like '[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]')
+		begin
+			raiserror('Formato invalido',16,1)
+			return
+		end
 
-		if(@data_nascimento > CONVERT(varchar(10), GETDATE(),103))
+		if(@data_nascimento > GETDATE())
 		begin
 			raiserror('Data invalida',16,1)
 			return
@@ -62,7 +67,7 @@ end
 Funciona
 
 	exec  Cliente_insert 'Diogo Santos do Nascimento','28/02/2002','10547286406'
-	exec  Cliente_insert 'Raul Severino Anderson Gomes','19/07/1941','93907929594'
+	exec  Cliente_insert 'Raul Severino Anderson Gomes','25/07/1941','93907929594'
 	exec  Cliente_insert 'Luzia Sebastiana Mariana Teixeira','10/12/1965','00699370108'
 
 

@@ -40,7 +40,7 @@ begin
 			return
 		end
 
-		if(@data_nascimento > CONVERT(varchar(10), GETDATE(),103))
+		if(@data_nascimento > GETDATE())
 		begin
 			raiserror('Data invalida',16,1)
 			return
