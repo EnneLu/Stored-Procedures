@@ -7,13 +7,15 @@ CREATE PROCEDURE Veiculo_insert
 	@uf CHAR(2)
 as
 begin
-
+	declare @erro bit
+	set @erro = 0
 
 	--Verificação de fabricante
 		if(@fabricante is null) or ((REPLACE(@fabricante,'','') = ''))
 		begin
 			raiserror('O nome do fabricante não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de fabricante
 
@@ -22,7 +24,8 @@ begin
 		if(@modelo is null) or ((REPLACE(@modelo,'','') = ''))
 		begin
 			raiserror('O nome do modelo não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de modelo
 
@@ -30,13 +33,15 @@ begin
 		if(@ano_fabricacao = '') or ((REPLACE(@ano_fabricacao,'','') = ''))
 		begin
 			raiserror('O ano de fabricação não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 		if(@ano_fabricacao > year(getdate()) or (@ano_fabricacao not like'[0-9][0-9][0-9][0-9]'))
 		begin
 			raiserror('O ano de fabricação invalido',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de ano de fabricação
 
@@ -44,12 +49,14 @@ begin
 		if(@placa is null) or ((REPLACE(@placa,'','') = '')) 
 		begin
 			raiserror('A placa não pode ser vazia',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 		if((@placa not like '[a-z][a-z][0-9][0-9][0-9][a-z][a-z]' ) and (@placa not like '[a-z][a-z][a-z][0-9][0-9][0-9][0-9]') ) 
 		begin
 			raiserror('Placa digitada está no formato invalido',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de placa
 
@@ -57,7 +64,8 @@ begin
 		if(@uf is null) or ((REPLACE(@uf,'','') = ''))
 		begin
 			raiserror('A uf não pode ser vazia',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 		if((UPPER(@uf) != 'AC') and
@@ -89,6 +97,13 @@ begin
 		(UPPER(@uf) != 'TO'))
 		begin
 			raiserror('UF invalida',16,1)
+			set @erro = 1
+			--return
+		end
+
+		if(@erro = 1)
+		begin			
+			rollback transaction
 			return
 		end
 
@@ -104,6 +119,7 @@ end
 Funciona
 
 	exec  Veiculo_insert 'Gurgel','BR-800','1988','MZV6877','RN'
+	exec  Veiculo_insert 'Gurgel','BR-800','3000','MZV6877','RN'
 	exec  Veiculo_insert 'Mitsubishi','Space Wagon GLXi 2.4 ( Nova S','1999','AJX2006','AC'
 	exec  Veiculo_insert 'Porsche','911 Carrera Cabriolet 3.4/ 3.6 Mec','1995','JAI7695','MT'
 	exec  Veiculo_insert 'Hyundai','ix35 2.0 Launching Edition 16V Flex Aut.','2016','HZY6421','PI'
@@ -114,6 +130,8 @@ Funciona
 	exec  Veiculo_insert 'Dodge','Dakota Sport 3.9 V6 CD Mec.','2001','MOD5244','RN'
 	exec  Veiculo_insert 'Cadillac','Seville 4.6','1991','MNH1733','RN'
 
+
+		exec  Veiculo_insert 'Gurgel','BR-800','3000','MZV-6877','RNn'
 */
 
 --fim de inserir cliente--

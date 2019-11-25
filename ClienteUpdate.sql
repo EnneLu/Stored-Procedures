@@ -8,6 +8,9 @@ CREATE PROCEDURE Cliente_update
 	@cpf VARCHAR(11)
 as
 begin
+	declare @erro bit
+	set @erro = 0
+
 	declare @verificarCpf bit
 	set @verificarCpf  = (select dbo.validarCpf(@cpf))
 
@@ -15,14 +18,16 @@ begin
 	if((@id = '') or (@id is null))
 		begin
 			raiserror('O campo id não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 	--Verificação de nome
 		if(@nome is null) or ((REPLACE(@nome,'','') = ''))
 		begin
 			raiserror('O campo nome não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de nome
 
@@ -30,20 +35,23 @@ begin
 	--Verificação de data
 		if(@data_nascimento is null) or ((REPLACE(@data_nascimento,'','') = ''))
 		begin
-			raiserror('O nome não pode ser vazio',16,1)
-			return
+			raiserror('A data não pode ser vazia',16,1)
+			set @erro = 1
+			--return
 		end
 
 		if(ISDATE(@data_nascimento) = 0)
 		begin
 			raiserror('Data incorreta',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 		if(@data_nascimento > GETDATE())
 		begin
 			raiserror('Data invalida',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de data
 
@@ -51,16 +59,24 @@ begin
 	--Verificação de cpf
 		if(@cpf is null) or ((REPLACE(@cpf,'','') = ''))
 		begin
-			raiserror('O campo cpf não pode ser vazio',16,1)
-			return
+			raiserror('O campo cpf nao pode ser vazio',16,1)
+			set @erro = 1
+			--return
 		end
 
 		if(@verificarCpf = 0) or ((REPLACE(@cpf,'','') = ''))
 		begin
 			raiserror('Cpf incorreto',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--fim da verificação de cpf
+
+	if(@erro = 1)
+		begin			
+			rollback transaction
+			return
+		end
 
 	update Cliente set nome = @nome,data_nascimento = @data_nascimento,cpf = @cpf where id = @id
 

@@ -55,9 +55,13 @@ namespace Stored_Procedures
             {
                 ok = false;
 
-                if (error.Message.Contains("O nome não pode ser vazio")) Session["MsgErronome"] = "Por favor, O nome não pode ser vazio";
+                if (error.Message.Contains("O campo nome não pode ser vazio")) Session["MsgErronome"] = "Por favor, O nome não pode ser vazio";
 
-                if (error.Message.Contains("Data invalida")) Session["MsgErrodata"] = "Data inválida";
+                if (error.Message.Contains("Data incorreta")) Session["MsgErrodata"] = "Data deve ser no formato DD/MM/AAAA";
+
+                if (error.Message.Contains("Data invalida")) Session["MsgErrodata"] = "A data deve ser menor do que a atual";
+
+                if (error.Message.Contains("A data não pode ser vazia")) Session["MsgErrodata"] = "A data não pode ser vazia";
 
                 if (error.Message.Contains("Cadeia de caracteres não foi reconhecida como DateTime válido.")) Session["MsgErrodata"] = "Data inválida";
 
@@ -65,6 +69,8 @@ namespace Stored_Procedures
 
 
                 if (error.Message.Contains("Cpf incorreto")) Session["MsgErrocpf"] = "Cpf incorreto";
+
+                if (error.Message.Contains("O campo cpf nao pode ser vazio")) Session["MsgErrocpf"] = "O campo cpf não pode ser vazio";
 
             }
 

@@ -38,6 +38,11 @@ namespace Stored_Procedures
                 MsgErrouf.Text = Session["MsgErrouf"].ToString();
                 Session["MsgErrouf"] = null;
             }
+            if ((Session["MsgErroano"] != null) && (Session["MsgErroano"].ToString() != ""))
+            {
+                MsgErrouf.Text = Session["MsgErroano"].ToString();
+                Session["MsgErroano"] = null;
+            }
         }
 
         protected void salvar_Click(object sender, EventArgs e)
@@ -46,7 +51,7 @@ namespace Stored_Procedures
             DAL.DAOVeiculo aDAOVeiculo;
 
             // Instancia um Objeto de Livro com as informações fornecidas
-            aVeiculo = new Modelo.Veiculo(1, fabricante.Text, modelo.Text, Convert.ToInt32(ano_fabricacao.Text), placa.Text, uf.Text);
+            aVeiculo = new Modelo.Veiculo(1, fabricante.Text, modelo.Text, ano_fabricacao.Text, placa.Text, uf.Text);
 
 
             // Instancia objeto da camada de negocio
@@ -65,17 +70,27 @@ namespace Stored_Procedures
             {
                 ok = false;
 
-                if (error.Message.Contains("Placa digitada está no formato invalido")) Session["MsgErroplaca"] = "Placa no formato invalido";
+                if ((error.Message.Contains("O nome do fabricante não pode ser vazio"))) Session["MsgErrodfabricante"] = "O nome do fabricante não pode ser vazio";
+
+                if (error.Message.Contains("O nome do modelo não pode ser vazio")) Session["MsgErromodelo"] = "O nome do modelo não pode ser vazio";
+
+
+                if ((error.Message.Contains("O ano de fabricação não pode ser vazio"))) Session["MsgErroano"] = "O ano de fabricação não pode ser vazio";
+
+
+                if (error.Message.Contains("O ano de fabricação invalido")) Session["MsgErroano"] = "O ano de fabricação deve ser no formato yyyy";
 
                 if (error.Message.Contains("Data invalida")) Session["MsgErroano"] = "Data inválida";
 
-                if (error.Message.Contains("UF invalida")) Session["MsgErrouf"] = "UF inválida";                
 
-                if ((error.Message.Contains("O ano de fabricação não pode ser vazio")) || (error.Message.Contains("O ano de fabricação invalido"))) Session["MsgErrofabricante"] = "O nome do fabricante não pode ser vazio";
+                if (error.Message.Contains("A placa não pode ser vazia")) Session["MsgErroplaca"] = "A placa não pode ser vazia";
 
-                if (error.Message.Contains("O nome do modelo não pode ser vazio")) Session["MsgErromodelo"] = "O nome do modelo não pode ser vazio";
-                if (error.Message.Contains("A cadeia de caracteres de entrada não estava em um formato correto.")) Session["MsgErromodelo"] = "O nome do modelo não pode ser vazio";
-               
+                if (error.Message.Contains("Placa digitada está no formato invalido")) Session["MsgErroplaca"] = "A placa deve ser no formato AB123CD ou ABC1234";
+
+                if (error.Message.Contains("UF invalida")) Session["MsgErrouf"] = "UF deve ser no formato AA";
+
+                if (error.Message.Contains("A uf não pode ser vazia")) Session["MsgErrouf"] = "A UF não pode ser vazia";
+
 
             }
 

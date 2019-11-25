@@ -11,6 +11,9 @@ CREATE PROCEDURE Veiculo_update
 as
 begin
 
+	declare @erro bit
+	set @erro = 0
+
 	--Verificação de id
 		if(@id = '') or ((REPLACE(@id,'','') = ''))
 		begin
@@ -18,12 +21,12 @@ begin
 			return
 		end
 	--Fim da verificação de id
-
 	--Verificação de fabricante
 		if(@fabricante is null) or ((REPLACE(@fabricante,'','') = ''))
 		begin
 			raiserror('O nome do fabricante não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de fabricante
 
@@ -32,7 +35,8 @@ begin
 		if(@modelo is null) or ((REPLACE(@modelo,'','') = ''))
 		begin
 			raiserror('O nome do modelo não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de modelo
 
@@ -40,13 +44,15 @@ begin
 		if(@ano_fabricacao = '') or ((REPLACE(@ano_fabricacao,'','') = ''))
 		begin
 			raiserror('O ano de fabricação não pode ser vazio',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 		if(@ano_fabricacao > year(getdate()) or (@ano_fabricacao not like'[0-9][0-9][0-9][0-9]'))
 		begin
 			raiserror('O ano de fabricação invalido',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de ano de fabricação
 
@@ -54,12 +60,14 @@ begin
 		if(@placa is null) or ((REPLACE(@placa,'','') = '')) 
 		begin
 			raiserror('A placa não pode ser vazia',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 		if((@placa not like '[a-z][a-z][0-9][0-9][0-9][a-z][a-z]' ) and (@placa not like '[a-z][a-z][a-z][0-9][0-9][0-9][0-9]') ) 
 		begin
 			raiserror('Placa digitada está no formato invalido',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 	--Fim da verificação de placa
 
@@ -67,7 +75,8 @@ begin
 		if(@uf is null) or ((REPLACE(@uf,'','') = ''))
 		begin
 			raiserror('A uf não pode ser vazia',16,1)
-			return
+			set @erro = 1
+			--return
 		end
 
 		if((UPPER(@uf) != 'AC') and
@@ -99,11 +108,18 @@ begin
 		(UPPER(@uf) != 'TO'))
 		begin
 			raiserror('UF invalida',16,1)
+			set @erro = 1
+			--return
+		end
+
+		if(@erro = 1)
+		begin
+			rollback transaction
 			return
 		end
 
 	--Fim da verificação de uf
 
-	update Veiculo set fabricante = @fabricante,modelo = @modelo,ano_fabricacao = @ano_fabricacao,placa = @placa,uf = @uf where id = @id
+	insert into Veiculo(fabricante,modelo,ano_fabricacao,placa,uf) values (@fabricante,@modelo,@ano_fabricacao,@placa,@uf)
 
 end

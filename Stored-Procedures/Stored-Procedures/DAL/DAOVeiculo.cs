@@ -43,7 +43,7 @@ namespace Stored_Procedures.DAL
                     aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()),
                                             dr["fabricante"].ToString(), 
                                             dr["modelo"].ToString(),
-                                            Convert.ToInt32(dr["ano_fabricacao"].ToString()),
+                                            dr["ano_fabricacao"].ToString(),
                                             dr["placa"].ToString(),
                                             dr["uf"].ToString());
                 }
@@ -81,7 +81,7 @@ namespace Stored_Procedures.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()), dr["fabricante"].ToString(), dr["modelo"].ToString(),Convert.ToInt32(dr["ano_fabricacao"].ToString()),dr["placa"].ToString(),dr["uf"].ToString());
+                    aVeiculo = new Modelo.Veiculo(Convert.ToInt32(dr["id"].ToString()), dr["fabricante"].ToString(), dr["modelo"].ToString(),dr["ano_fabricacao"].ToString(),dr["placa"].ToString(),dr["uf"].ToString());
                     aListVeiculo.Add(aVeiculo);
                 }
             }
