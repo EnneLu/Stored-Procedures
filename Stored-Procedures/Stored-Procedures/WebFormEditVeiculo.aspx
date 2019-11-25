@@ -61,6 +61,7 @@
                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-expand">
                         <h3 class="uk-card-title uk-margin-remove-bottom">Modelo<asp:TextBox ID="modelotext" runat="server"></asp:TextBox></h3>
+                        <asp:Label ID="MsgErromodelo" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
                         <p class="uk-text-meta uk-margin-remove-top"></p>
                     </div>
                 </div>

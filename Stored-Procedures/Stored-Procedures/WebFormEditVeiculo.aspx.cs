@@ -14,20 +14,20 @@ namespace Stored_Procedures
         {
 
             // Apresenta mensagem de erro
-            if ((Session["MsgErrodfabricante"] != null) && (Session["MsgErrodfabricante"].ToString() != ""))
+            if ((Session["MsgErrofabricante"] != null) && (Session["MsgErrofabricante"].ToString() != ""))
             {
-                MsgErrodfabricante.Text = Session["MsgErrodfabricante"].ToString();
-                Session["MsgErrodfabricante"] = null;
+                MsgErrofabricante.Text = Session["MsgErrofabricante"].ToString();
+                Session["MsgErrofabricante"] = null;
             }
             if ((Session["MsgErromodelo"] != null) && (Session["MsgErromodelo"].ToString() != ""))
             {
                 MsgErromodelo.Text = Session["MsgErromodelo"].ToString();
                 Session["MsgErromodelo"] = null;
             }
-            if ((Session["MsgErrodano"] != null) && (Session["MsgErrodano"].ToString() != ""))
+            if ((Session["MsgErroano"] != null) && (Session["MsgErroano"].ToString() != ""))
             {
-                MsgErrodano.Text = Session["MsgErrodano"].ToString();
-                Session["MsgErrodano"] = null;
+                MsgErroano.Text = Session["MsgErroano"].ToString();
+                Session["MsgErroano"] = null;
             }
             if ((Session["MsgErroplaca"] != null) && (Session["MsgErroplaca"].ToString() != ""))
             {

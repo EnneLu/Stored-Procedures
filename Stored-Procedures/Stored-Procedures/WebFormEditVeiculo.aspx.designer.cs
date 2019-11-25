@@ -49,6 +49,15 @@ namespace Stored_Procedures {
         protected global::System.Web.UI.WebControls.TextBox modelotext;
         
         /// <summary>
+        /// Controle MsgErromodelo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErromodelo;
+        
+        /// <summary>
         /// Controle fabricantetext.
         /// </summary>
         /// <remarks>
