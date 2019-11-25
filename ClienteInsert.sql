@@ -66,7 +66,7 @@ end
 
 Funciona
 
-	exec  Cliente_insert 'Diogo Santos do Nascimento','28/02/2002','10547286406'
+	exec  Cliente_insert 'Diogo Santos do Nascimento','16461564','10547286406'
 	exec  Cliente_insert 'Raul Severino Anderson Gomes','25/07/1941','93907929594'
 	exec  Cliente_insert 'Luzia Sebastiana Mariana Teixeira','10/12/1965','00699370108'
 
