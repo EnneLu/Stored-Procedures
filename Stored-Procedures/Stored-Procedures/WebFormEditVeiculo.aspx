@@ -67,9 +67,14 @@
             </div>
             <div class="uk-card-body">
                 <p>Fabricante <asp:TextBox ID="fabricantetext" runat="server"></asp:TextBox></p>
-                <p>Ano fabricação <asp:TextBox ID="ano_fabricacaotext" runat="server"></asp:TextBox></p>
-                <p>Placa <asp:TextBox ID="placatext" runat="server"></asp:TextBox></p>
+                <asp:Label ID="MsgErrofabricante" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
+                <p>Ano fabricação <asp:TextBox ID="ano_fabricacaotext" runat="server"></asp:TextBox></p>                
+                <asp:Label ID="MsgErroano" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
+                <p>Placa <asp:TextBox ID="placatext" runat="server"></asp:TextBox></p>                               
+                <asp:Label ID="MsgErroplaca" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
                 <p>UF <asp:TextBox ID="uftext" runat="server"></asp:TextBox></p>
+                <asp:Label ID="MsgErrouf" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
+
             </div>
             <div class="uk-card-footer">
                 <asp:LinkButton runat="server" ID="editar" CssClass="uk-button  uk-button-danger btn" OnClick="Button2_Click">EDITAR</asp:LinkButton>

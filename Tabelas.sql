@@ -17,19 +17,4 @@ CREATE TABLE Veiculo(
 )
 
 
-danger zone
 
-
- drop table Cliente
-
- drop table Veiculo
-
- DROP procedure Cliente_insert 
-
- DROP procedure Cliente_select_all
-
- DROP procedure Cliente_delete
-
- DROP procedure Cliente_update
-
- drop function validarCPF

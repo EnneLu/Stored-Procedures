@@ -65,5 +65,10 @@ namespace Stored_Procedures
             if (ok) Response.Redirect("~//WebFormCRUDCliente.aspx");
             Response.Redirect("~//WebFormEditCliente.aspx");
         }
+
+        protected void nometext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
